@@ -1,11 +1,11 @@
 /* Typography */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Calibri', sans-serif;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif;
+    font-family: 'Calibri', sans-serif;
 }
 
 h1 {
@@ -39,12 +39,17 @@ a:hover {
 }
 
 /* Spacing */
+body {
+    padding-bottom: 20px; /* Add space at the bottom of the page */
+}
+
 .container {
     margin-top: 20px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add space at the bottom of the container */
 }
 
 .phase-section {
@@ -96,5 +101,7 @@ a:hover {
         padding: 15px;
     }
 }
+
+
 
 
