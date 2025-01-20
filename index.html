@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Plan Tracker</title>
+    <title>Comprehensive Learning Plan</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1, h2 { color: #2c3e50; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        h2 { margin-top: 40px; }
         section { margin-bottom: 30px; }
         .topic { margin-left: 20px; }
         input[type="checkbox"] { margin-right: 10px; }
@@ -15,12 +16,14 @@
     </style>
 </head>
 <body>
-    <h1>Learning Plan Tracker</h1>
-    <p>Welcome to your learning plan tracker. Use the checkboxes to mark topics as completed. Your progress is automatically saved.</p>
+    <h1>Comprehensive Learning Plan</h1>
+    <p>Track your progress through the learning phases using the checkboxes. Links to resources are provided for each topic. Your progress is automatically saved.</p>
 
-    <!-- Week 1 -->
+    <!-- Phase 1 -->
     <section>
-        <h2>Week 1: C# Basics Refresher</h2>
+        <h2>Phase 1: C# Basics and Fundamentals</h2>
+        <p><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
+
         <div class="topic">
             <input type="checkbox" id="variables">
             <label for="variables">Variables</label>
@@ -53,9 +56,11 @@
         </div>
     </section>
 
-    <!-- Week 2 -->
+    <!-- Phase 2 -->
     <section>
-        <h2>Week 2: SOLID Design Principles</h2>
+        <h2>Phase 2: Software Design Principles and Patterns</h2>
+        <p><strong>Objective:</strong> Understand SOLID principles and essential design patterns to write clean, maintainable, and scalable code.</p>
+
         <div class="topic">
             <input type="checkbox" id="single-responsibility">
             <label for="single-responsibility">Single Responsibility Principle</label>
@@ -83,9 +88,11 @@
         </div>
     </section>
 
-    <!-- Week 3 -->
+    <!-- Phase 3 -->
     <section>
-        <h2>Week 3: Entity Framework</h2>
+        <h2>Phase 3: Entity Framework and Dependency Injection</h2>
+        <p><strong>Objective:</strong> Learn how to work with data using Entity Framework Core and implement Dependency Injection to decouple code.</p>
+
         <div class="topic">
             <input type="checkbox" id="ef-intro">
             <label for="ef-intro">Introduction to Entity Framework</label>
@@ -101,10 +108,34 @@
             <label for="ef-queries">Writing LINQ Queries</label>
             <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" target="_blank">Learning Resource</a>
         </div>
+        <div class="topic">
+            <input type="checkbox" id="dependency-injection">
+            <label for="dependency-injection">Dependency Injection Basics</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection" target="_blank">Learning Resource</a>
+        </div>
     </section>
 
-    <!-- More Weeks as Needed -->
-    <p>Continue adding topics and weeks following the same format.</p>
+    <!-- Phase 4 -->
+    <section>
+        <h2>Phase 4: Web Development and APIs</h2>
+        <p><strong>Objective:</strong> Gain proficiency in building web applications with ASP.NET MVC and interacting with APIs using REST and gRPC.</p>
+
+        <div class="topic">
+            <input type="checkbox" id="mvc-intro">
+            <label for="mvc-intro">Introduction to ASP.NET MVC</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="rest-api">
+            <label for="rest-api">REST API Basics</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/web-api/overview/advanced/restful-route-conventions" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="grpc">
+            <label for="grpc">Introduction to gRPC</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/?view=aspnetcore-6.0" target="_blank">Learning Resource</a>
+        </div>
+    </section>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
