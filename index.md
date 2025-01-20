@@ -2,15 +2,6 @@
 layout: default
 title: Comprehensive Learning Plan
 ---
-<style>
-ul {
-    list-style-type: none;
-}
-
-ul li {
-    margin-left: -20px; /* Adjust this value as needed */
-}
-</style>
 # Comprehensive Learning Plan
 
 This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!
