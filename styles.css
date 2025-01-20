@@ -1,0 +1,30 @@
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-left: -20px; /* Adjust this value as needed */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.checkbox-label {
+    margin-left: 5px;
+}
+
+.phase-section {
+    margin-bottom: 40px; /* Adjust this value as needed */
+}
+
+.phase-section h2 {
+    margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+.phase-section h3 {
+    margin-top: 20px; /* Adjust this value as needed */
+}
+
+
