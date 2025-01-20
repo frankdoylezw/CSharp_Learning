@@ -6,16 +6,19 @@
     <title>Learning Plan Tracker</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        h1 { color: #2c3e50; }
-        section { margin-bottom: 20px; }
+        h1, h2 { color: #2c3e50; }
+        section { margin-bottom: 30px; }
         .topic { margin-left: 20px; }
         input[type="checkbox"] { margin-right: 10px; }
-        a { color: #3498db; text-decoration: none; }
+        a { color: #3498db; text-decoration: none; margin-left: 10px; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>My Learning Plan Tracker</h1>
+    <h1>Learning Plan Tracker</h1>
+    <p>Welcome to your learning plan tracker. Use the checkboxes to mark topics as completed. Your progress is automatically saved.</p>
 
+    <!-- Week 1 -->
     <section>
         <h2>Week 1: C# Basics Refresher</h2>
         <div class="topic">
@@ -33,14 +36,93 @@
             <label for="methods">Methods</label>
             <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods" target="_blank">Learning Resource</a>
         </div>
-        <!-- Add more topics and exercises as needed -->
+        <div class="topic">
+            <input type="checkbox" id="classes">
+            <label for="classes">Classes</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="inheritance">
+            <label for="inheritance">Inheritance</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="interfaces">
+            <label for="interfaces">Interfaces</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/" target="_blank">Learning Resource</a>
+        </div>
     </section>
 
+    <!-- Week 2 -->
     <section>
-        <h2>Week 2: SOLID Principles</h2>
-        <!-- Add SOLID principles content here -->
+        <h2>Week 2: SOLID Design Principles</h2>
+        <div class="topic">
+            <input type="checkbox" id="single-responsibility">
+            <label for="single-responsibility">Single Responsibility Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="open-closed">
+            <label for="open-closed">Open-Closed Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="liskov-substitution">
+            <label for="liskov-substitution">Liskov Substitution Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="interface-segregation">
+            <label for="interface-segregation">Interface Segregation Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="dependency-inversion">
+            <label for="dependency-inversion">Dependency Inversion Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
     </section>
 
-    <!-- Add more sections for subsequent weeks -->
+    <!-- Week 3 -->
+    <section>
+        <h2>Week 3: Entity Framework</h2>
+        <div class="topic">
+            <input type="checkbox" id="ef-intro">
+            <label for="ef-intro">Introduction to Entity Framework</label>
+            <a href="https://learn.microsoft.com/en-us/ef/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="ef-migrations">
+            <label for="ef-migrations">EF Migrations</label>
+            <a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="ef-queries">
+            <label for="ef-queries">Writing LINQ Queries</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" target="_blank">Learning Resource</a>
+        </div>
+    </section>
+
+    <!-- More Weeks as Needed -->
+    <p>Continue adding topics and weeks following the same format.</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            // Load progress from localStorage
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id);
+                checkbox.checked = isChecked === "true";
+            });
+
+            // Save progress to localStorage
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", () => {
+                    localStorage.setItem(checkbox.id, checkbox.checked);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
