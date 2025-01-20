@@ -103,12 +103,16 @@
             .from('checkboxes')
             .select('*')
             .then(response => {
+                console.log('Loaded checkbox states:', response.data);
                 response.data.forEach(item => {
                     const checkbox = document.getElementById(item.id);
                     if (checkbox) {
                         checkbox.checked = item.checked;
                     }
                 });
+            })
+            .catch(error => {
+                console.error('Error loading checkbox states:', error);
             });
 
         // Save checkbox state to the server
@@ -121,7 +125,10 @@
                     .from('checkboxes')
                     .upsert({ id, checked })
                     .then(response => {
-                        console.log('Checkbox state saved');
+                        console.log('Checkbox state saved:', response);
+                    })
+                    .catch(error => {
+                        console.error('Error saving checkbox state:', error);
                     });
             });
         });
@@ -129,3 +136,5 @@
     </script>
 </body>
 </html>
+
+
