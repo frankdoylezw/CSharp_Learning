@@ -1,77 +1,148 @@
 ---
 layout: default
-title: Comprehensive Learning Plan
+title: Learning Plan for C# and .NET
 ---
 
-# Comprehensive Learning Plan
+## Phase 1: C# Basics Refresher
+**Objective:** Get comfortable with basic C# concepts and syntax.  
+- Topics: Variables, loops, methods, classes, inheritance, interfaces.  
+- Exercises:  
+  - Write simple classes and methods, e.g., a calculator or a book library.  
+  - Refactor code to use interfaces where applicable.
 
-This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!
+**Learn More:**
+- [C# Fundamentals](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
+- [C# Methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
 
-## Phase 1: C# Basics and Fundamentals
+---
 
-**Objective:** Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.
+## Phase 2: Object-Oriented Programming (OOP) in C#
+**Objective:** Strengthen understanding of OOP principles in C#.  
+- Topics: Classes, objects, inheritance, polymorphism, encapsulation, abstraction.  
+- Exercises:  
+  - Build a small project that involves multiple classes and inheritance, e.g., a simple inventory management system.  
+  - Use polymorphism to create a flexible design.
 
-- [ ] Variables ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/))
-- [ ] Loops ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops))
-- [ ] Methods ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods))
-- [ ] Classes ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/))
-- [ ] Inheritance ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance))
-- [ ] Interfaces ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/))
+**Learn More:**
+- [Object-Oriented Programming in C#](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/)
+- [Polymorphism in C#](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)
 
-### Exercises
+---
 
-- Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.
-- Create a class to represent a book and include methods for borrowing and returning books.
-- Refactor an existing program to use interfaces for better flexibility.
+## Phase 3: Working with Entity Framework Core
+**Objective:** Learn how to interact with databases using Entity Framework Core.  
+- Topics: DbContext, models, migrations, CRUD operations.  
+- Exercises:  
+  - Set up a simple application with a database, using Entity Framework Core to handle data operations.  
+  - Implement CRUD functionality in a console application or web app.
 
-## Phase 2: Intermediate C# and Web Development
+**Learn More:**
+- [Getting Started with Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/get-started/)
+- [EF Core CRUD Operations](https://learn.microsoft.com/en-us/ef/core/saving/)
 
-**Objective:** Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.
+---
 
-- [ ] Entity Framework Basics ([Learn More](https://learn.microsoft.com/en-us/ef/))
-- [ ] Dependency Injection ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection))
-- [ ] ASP.NET MVC Overview ([Learn More](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc))
+## Phase 4: Dependency Injection in C#
+**Objective:** Understand and apply dependency injection to make code more testable and flexible.  
+- Topics: Dependency injection, IoC containers, constructor injection, service lifetimes.  
+- Exercises:  
+  - Implement dependency injection in a simple application.  
+  - Refactor code to use DI in services and controllers.
 
-### Exercises
+**Learn More:**
+- [Dependency Injection in .NET](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection)
+- [Dependency Injection Patterns](https://www.tutorialsdesk.com/dependency-injection-design-pattern-in-csharp/)
 
-- Set up a simple database with Entity Framework to manage employee records.
-- Implement Dependency Injection in an ASP.NET Core project to manage service lifetimes.
-- Create a small MVC application to display and edit product details.
+---
 
-## Phase 3: Frontend and Integration Development
+## Phase 5: MVC Architecture in .NET
+**Objective:** Gain understanding of the MVC pattern and its application in .NET.  
+- Topics: MVC pattern, Controllers, Views, Models, Routing.  
+- Exercises:  
+  - Create a basic web app using ASP.NET MVC.
+  - Implement a simple CRUD interface using MVC components.
 
-**Objective:** Develop skills in frontend technologies and API integration to build robust and interactive web applications.
+**Learn More:**
+- [MVC Architecture in .NET](https://learn.microsoft.com/en-us/aspnet/core/mvc/)
+- [Getting Started with MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/)
 
-- [ ] HTML & CSS Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/HTML))
-- [ ] JavaScript Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide))
-- [ ] jQuery Overview ([Learn More](https://learn.jquery.com/))
-- [ ] REST APIs ([Learn More](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design))
-- [ ] gRPC Basics ([Learn More](https://learn.microsoft.com/en-us/aspnet/core/grpc/))
+---
 
-### Exercises
+## Phase 6: Working with APIs (REST, gRPC, WCF)
+**Objective:** Learn how to interact with and create APIs using different technologies.  
+- Topics: RESTful APIs, gRPC, WCF services, JSON handling.  
+- Exercises:  
+  - Create a RESTful API in .NET Core using controllers.
+  - Learn how to consume and send requests to a third-party API.
 
-- Create a basic HTML page styled with CSS to display a user profile.
-- Write JavaScript to validate a user input form.
-- Build a simple application that consumes a REST API to fetch and display data.
+**Learn More:**
+- [Creating RESTful APIs with ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/web-api/)
+- [Introduction to gRPC in .NET](https://learn.microsoft.com/en-us/aspnet/core/grpc/)
+- [WCF Services in .NET](https://learn.microsoft.com/en-us/dotnet/framework/wcf/)
 
-## Phase 4: Advanced Development Practices
+---
 
-**Objective:** Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.
+## Phase 7: Version Control with Git
+**Objective:** Get familiar with Git to manage code and collaborate in teams.  
+- Topics: Git basics, branches, commits, pull requests, merges.  
+- Exercises:  
+  - Create a Git repository and make your first commit.
+  - Learn basic Git commands: `git clone`, `git add`, `git commit`, `git push`.
 
-- [ ] Version Control with Git ([Learn More](https://git-scm.com/doc))
-- [ ] Test-Driven Development (TDD) ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/testing/))
-- [ ] Docker Fundamentals ([Learn More](https://docs.docker.com/get-started/))
-- [ ] Azure Basics ([Learn More](https://learn.microsoft.com/en-us/azure/))
+**Learn More:**
+- [Learn Git](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/use-git)
+- [Git Basics](https://git-scm.com/book/en/v2)
 
-### Exercises
+---
 
-- Use Git to clone a repository, create branches, and merge changes.
-- Write unit tests for a small class using NUnit.
-- Containerize a basic application with Docker and deploy it locally.
-- Set up a basic Azure App Service to host a web application.
+## Phase 8: Unit Testing with NUnit (TDD/BDD)
+**Objective:** Learn how to write unit tests using NUnit and implement TDD/BDD.  
+- Topics: Unit testing, Test-Driven Development (TDD), Behavior-Driven Development (BDD).  
+- Exercises:  
+  - Write unit tests for your C# methods using NUnit.
+  - Learn to use Moq for mocking dependencies.
+
+**Learn More:**
+- [NUnit Testing](https://nunit.org/)
+- [TDD with NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
+- [BDD with NUnit](https://martinfowler.com/articles/introducing-bdd/)
+
+---
+
+## Phase 9: Docker for Developers
+**Objective:** Understand the use of Docker to containerize your applications.  
+- Topics: Docker images, containers, Dockerfiles, Docker Compose.  
+- Exercises:  
+  - Create a simple Docker container for a .NET Core application.
+  - Learn how to work with Docker Compose to orchestrate multiple services.
+
+**Learn More:**
+- [Docker Overview](https://docs.docker.com/get-started/)
+- [Docker and .NET Core](https://learn.microsoft.com/en-us/dotnet/core/docker/)
+
+---
+
+## Phase 10: Azure Fundamentals
+**Objective:** Learn how to deploy applications to Azure and use Azure services.  
+- Topics: Azure Web Apps, Azure Storage, Azure Functions.  
+- Exercises:  
+  - Deploy a .NET Core web application to Azure.
+  - Explore Azure storage options for a web app.
+
+**Learn More:**
+- [Azure Overview](https://learn.microsoft.com/en-us/azure/)
+- [Deploy .NET Core to Azure](https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore)
+
+---
 
 ## Tracking Progress
+To track your progress, check off items as you complete them, or add comments about what you've learned or found challenging. You can revisit each phase for further learning or practice.
 
-This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!
+**Example of Progress Tracking:**
+- ✅ Completed C# Basics Refresher.
+- ⬜ Worked on Entity Framework CRUD operations.
 
+---
 
+## Next Steps:
+Once you've completed these phases, move on to learning about **MVC architecture**, **APIs**, and **Testing** frameworks to build upon your knowledge and skills.
