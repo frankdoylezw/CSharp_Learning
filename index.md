@@ -58,12 +58,12 @@
     <h2>Phase 1: C# Basics and Fundamentals</h2>
     <p class="phase-description"><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
     <ul>
-        <li><input type="checkbox" id="variables"> Variables ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/))</li>
-        <li><input type="checkbox" id="loops"> Loops ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops))</li>
-        <li><input type="checkbox" id="methods"> Methods ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods))</li>
-        <li><input type="checkbox" id="classes"> Classes ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/))</li>
-        <li><input type="checkbox" id="inheritance"> Inheritance ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance))</li>
-        <li><input type="checkbox" id="interfaces"> Interfaces ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/))</li>
+        <li><input type="checkbox" id="variables"> Variables (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="loops"> Loops (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="methods"> Methods (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="classes"> Classes (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="inheritance"> Inheritance (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="interfaces"> Interfaces (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
     </ul>
     <h3>Exercises</h3>
     <ul>
@@ -75,9 +75,9 @@
     <h2>Phase 2: Intermediate C# and Web Development</h2>
     <p class="phase-description"><strong>Objective:</strong> Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.</p>
     <ul>
-        <li><input type="checkbox" id="ef"> Entity Framework Basics ([Learn More](https://learn.microsoft.com/en-us/ef/))</li>
-        <li><input type="checkbox" id="di"> Dependency Injection ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection))</li>
-        <li><input type="checkbox" id="mvc"> ASP.NET MVC Overview ([Learn More](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc))</li>
+        <li><input type="checkbox" id="ef"> Entity Framework Basics (<a href="https://learn.microsoft.com/en-us/ef/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="di"> Dependency Injection (<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="mvc"> ASP.NET MVC Overview (<a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
     </ul>
     <h3>Exercises</h3>
     <ul>
@@ -89,11 +89,11 @@
     <h2>Phase 3: Frontend and Integration Development</h2>
     <p class="phase-description"><strong>Objective:</strong> Develop skills in frontend technologies and API integration to build robust and interactive web applications.</p>
     <ul>
-        <li><input type="checkbox" id="html-css"> HTML & CSS Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/HTML))</li>
-        <li><input type="checkbox" id="js"> JavaScript Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide))</li>
-        <li><input type="checkbox" id="jquery"> jQuery Overview ([Learn More](https://learn.jquery.com/))</li>
-        <li><input type="checkbox" id="rest"> REST APIs ([Learn More](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design))</li>
-        <li><input type="checkbox" id="grpc"> gRPC Basics ([Learn More](https://learn.microsoft.com/en-us/aspnet/core/grpc/))</li>
+        <li><input type="checkbox" id="html-css"> HTML & CSS Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="js"> JavaScript Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="jquery"> jQuery Overview (<a href="https://learn.jquery.com/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="rest"> REST APIs (<a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="grpc"> gRPC Basics (<a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
     </ul>
     <h3>Exercises</h3>
     <ul>
@@ -105,10 +105,10 @@
     <h2>Phase 4: Advanced Development Practices</h2>
     <p class="phase-description"><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
     <ul>
-        <li><input type="checkbox" id="git"> Version Control with Git ([Learn More](https://git-scm.com/doc))</li>
-        <li><input type="checkbox" id="tdd"> Test-Driven Development (TDD) ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/testing/))</li>
-        <li><input type="checkbox" id="docker"> Docker Fundamentals ([Learn More](https://docs.docker.com/get-started/))</li>
-        <li><input type="checkbox" id="azure"> Azure Basics ([Learn More](https://learn.microsoft.com/en-us/azure/))</li>
+        <li><input type="checkbox" id="git"> Version Control with Git (<a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="tdd"> Test-Driven Development (TDD) (<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="docker"> Docker Fundamentals (<a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
+        <li><input type="checkbox" id="azure"> Azure Basics (<a href="https://learn.microsoft.com/en-us/azure/" target="_blank" rel="noopener noreferrer">Learn More</a>)</li>
     </ul>
     <h3>Exercises</h3>
     <ul>
