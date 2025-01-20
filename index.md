@@ -1,107 +1,124 @@
----
-layout: default
-title: Comprehensive Learning Plan
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Learning Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .phase-description {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        // Save checkbox state to localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // Load state from localStorage
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id) === "true";
+                checkbox.checked = isChecked;
+            });
 
-# Comprehensive Learning Plan
+            // Save state on click
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", () => {
+                    localStorage.setItem(checkbox.id, checkbox.checked);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Comprehensive Learning Plan</h1>
+    <p>This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!</p>
 
-This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!
+    <h2>Phase 1: C# Basics and Fundamentals</h2>
+    <p class="phase-description"><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
+    <ul>
+        <li><input type="checkbox" id="variables"> Variables ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/))</li>
+        <li><input type="checkbox" id="loops"> Loops ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops))</li>
+        <li><input type="checkbox" id="methods"> Methods ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods))</li>
+        <li><input type="checkbox" id="classes"> Classes ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/))</li>
+        <li><input type="checkbox" id="inheritance"> Inheritance ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance))</li>
+        <li><input type="checkbox" id="interfaces"> Interfaces ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/))</li>
+    </ul>
+    <h3>Exercises</h3>
+    <ul>
+        <li>Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.</li>
+        <li>Create a class to represent a book and include methods for borrowing and returning books.</li>
+        <li>Refactor an existing program to use interfaces for better flexibility.</li>
+    </ul>
 
----
+    <h2>Phase 2: Intermediate C# and Web Development</h2>
+    <p class="phase-description"><strong>Objective:</strong> Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.</p>
+    <ul>
+        <li><input type="checkbox" id="ef"> Entity Framework Basics ([Learn More](https://learn.microsoft.com/en-us/ef/))</li>
+        <li><input type="checkbox" id="di"> Dependency Injection ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection))</li>
+        <li><input type="checkbox" id="mvc"> ASP.NET MVC Overview ([Learn More](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc))</li>
+    </ul>
+    <h3>Exercises</h3>
+    <ul>
+        <li>Set up a simple database with Entity Framework to manage employee records.</li>
+        <li>Implement Dependency Injection in an ASP.NET Core project to manage service lifetimes.</li>
+        <li>Create a small MVC application to display and edit product details.</li>
+    </ul>
 
-## Phase 1: C# Basics and Fundamentals
+    <h2>Phase 3: Frontend and Integration Development</h2>
+    <p class="phase-description"><strong>Objective:</strong> Develop skills in frontend technologies and API integration to build robust and interactive web applications.</p>
+    <ul>
+        <li><input type="checkbox" id="html-css"> HTML & CSS Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/HTML))</li>
+        <li><input type="checkbox" id="js"> JavaScript Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide))</li>
+        <li><input type="checkbox" id="jquery"> jQuery Overview ([Learn More](https://learn.jquery.com/))</li>
+        <li><input type="checkbox" id="rest"> REST APIs ([Learn More](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design))</li>
+        <li><input type="checkbox" id="grpc"> gRPC Basics ([Learn More](https://learn.microsoft.com/en-us/aspnet/core/grpc/))</li>
+    </ul>
+    <h3>Exercises</h3>
+    <ul>
+        <li>Create a basic HTML page styled with CSS to display a user profile.</li>
+        <li>Write JavaScript to validate a user input form.</li>
+        <li>Build a simple application that consumes a REST API to fetch and display data.</li>
+    </ul>
 
-**Objective:** Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.
+    <h2>Phase 4: Advanced Development Practices</h2>
+    <p class="phase-description"><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
+    <ul>
+        <li><input type="checkbox" id="git"> Version Control with Git ([Learn More](https://git-scm.com/doc))</li>
+        <li><input type="checkbox" id="tdd"> Test-Driven Development (TDD) ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/testing/))</li>
+        <li><input type="checkbox" id="docker"> Docker Fundamentals ([Learn More](https://docs.docker.com/get-started/))</li>
+        <li><input type="checkbox" id="azure"> Azure Basics ([Learn More](https://learn.microsoft.com/en-us/azure/))</li>
+    </ul>
+    <h3>Exercises</h3>
+    <ul>
+        <li>Use Git to clone a repository, create branches, and merge changes.</li>
+        <li>Write unit tests for a small class using NUnit.</li>
+        <li>Containerize a basic application with Docker and deploy it locally.</li>
+        <li>Set up a basic Azure App Service to host a web application.</li>
+    </ul>
 
-### Topics
-- [ ] **Variables**  
-  [Learning Resource: Variables](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/)
-- [ ] **Loops**  
-  [Learning Resource: Loops](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops)
-- [ ] **Methods**  
-  [Learning Resource: Methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
-- [ ] **Classes**  
-  [Learning Resource: Classes](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/)
-- [ ] **Inheritance**  
-  [Learning Resource: Inheritance](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance)
-- [ ] **Interfaces**  
-  [Learning Resource: Interfaces](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/)
-
-### Exercises
-- [ ] Write a **calculator class** that includes methods for addition, subtraction, multiplication, and division.
-- [ ] Create a **book library** class with methods to add, remove, and list books.
-- [ ] Refactor a simple project to use **interfaces** for better abstraction.
-
----
-
-## Phase 2: Intermediate C# and Web Development
-
-**Objective:** Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.
-
-### Topics
-- [ ] **Entity Framework Basics**  
-  [Learning Resource: Entity Framework](https://learn.microsoft.com/en-us/ef/)
-- [ ] **Dependency Injection**  
-  [Learning Resource: Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
-- [ ] **ASP.NET MVC Overview**  
-  [Learning Resource: MVC](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc)
-
-### Exercises
-- [ ] Set up a **basic database** using Entity Framework. Create a model for "Products" and implement CRUD operations.
-- [ ] Create a simple **ASP.NET MVC app** to manage employee records.
-- [ ] Use Dependency Injection to decouple logic from the application.
-
----
-
-## Phase 3: Frontend and Integration Development
-
-**Objective:** Develop skills in frontend technologies and API integration to build robust and interactive web applications.
-
-### Topics
-- [ ] **HTML & CSS Basics**  
-  [Learning Resource: HTML & CSS](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [ ] **JavaScript Basics**  
-  [Learning Resource: JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-- [ ] **jQuery Overview**  
-  [Learning Resource: jQuery](https://learn.jquery.com/)
-- [ ] **REST APIs**  
-  [Learning Resource: REST APIs](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-- [ ] **gRPC Basics**  
-  [Learning Resource: gRPC](https://learn.microsoft.com/en-us/aspnet/core/grpc/)
-
-### Exercises
-- [ ] Build a static HTML/CSS webpage that lists employee details.
-- [ ] Add interactivity using **JavaScript** or **jQuery** for dynamic content.
-- [ ] Create a simple **REST API** that provides employee data.
-- [ ] Experiment with **gRPC** to create a basic service and client.
-
----
-
-## Phase 4: Advanced Development Practices
-
-**Objective:** Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.
-
-### Topics
-- [ ] **Version Control with Git**  
-  [Learning Resource: Git Basics](https://git-scm.com/doc)
-- [ ] **Test-Driven Development (TDD)**  
-  [Learning Resource: TDD](https://learn.microsoft.com/en-us/dotnet/core/testing/)
-- [ ] **Docker Fundamentals**  
-  [Learning Resource: Docker](https://docs.docker.com/get-started/)
-- [ ] **Azure Basics**  
-  [Learning Resource: Azure](https://learn.microsoft.com/en-us/azure/)
-
-### Exercises
-- [ ] Create a new repository and practice **branching, merging, and resolving conflicts**.
-- [ ] Write unit tests for a small project using **NUnit** or **MSTest**.
-- [ ] Build a Docker container for a small ASP.NET app and run it locally.
-- [ ] Deploy an ASP.NET app to Azure using a free tier.
-
----
-
-### Tracking Progress
-
-As you work through the phases, check off each topic and exercise to track your progress.  
-Feel free to revisit completed sections if needed for additional practice.
-
----
+    <h2>Tracking Progress</h2>
+    <p>This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!</p>
+</body>
+</html>
