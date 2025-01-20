@@ -2,6 +2,7 @@
 layout: default
 title: Comprehensive Learning Plan
 ---
+
 # Comprehensive Learning Plan
 
 This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!
@@ -10,12 +11,12 @@ This structured learning plan is designed to help you develop essential skills i
 
 **Objective:** Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.
 
-- [ ] Variables ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/)) {#variables} {id="variables"}
-- [ ] Loops ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops)) {#loops} {id="loops"}
-- [ ] Methods ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)) {#methods} {id="methods"}
-- [ ] Classes ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/)) {#classes} {id="classes"}
-- [ ] Inheritance ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance)) {#inheritance} {id="inheritance"}
-- [ ] Interfaces ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/)) {#interfaces} {id="interfaces"}
+- [ ] Variables ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/))
+- [ ] Loops ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops))
+- [ ] Methods ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods))
+- [ ] Classes ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/))
+- [ ] Inheritance ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance))
+- [ ] Interfaces ([Learn More](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/))
 
 ### Exercises
 
@@ -27,9 +28,9 @@ This structured learning plan is designed to help you develop essential skills i
 
 **Objective:** Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.
 
-- [ ] Entity Framework Basics ([Learn More](https://learn.microsoft.com/en-us/ef/)) {#ef} {id="ef"}
-- [ ] Dependency Injection ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)) {#di} {id="di"}
-- [ ] ASP.NET MVC Overview ([Learn More](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc)) {#mvc} {id="mvc"}
+- [ ] Entity Framework Basics ([Learn More](https://learn.microsoft.com/en-us/ef/))
+- [ ] Dependency Injection ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection))
+- [ ] ASP.NET MVC Overview ([Learn More](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc))
 
 ### Exercises
 
@@ -41,11 +42,11 @@ This structured learning plan is designed to help you develop essential skills i
 
 **Objective:** Develop skills in frontend technologies and API integration to build robust and interactive web applications.
 
-- [ ] HTML & CSS Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/HTML)) {#html} {id="html"}
-- [ ] JavaScript Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)) {#js} {id="js"}
-- [ ] jQuery Overview ([Learn More](https://learn.jquery.com/)) {#jquery} {id="jquery"}
-- [ ] REST APIs ([Learn More](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)) {#rest} {id="rest"}
-- [ ] gRPC Basics ([Learn More](https://learn.microsoft.com/en-us/aspnet/core/grpc/)) {#grpc} {id="grpc"}
+- [ ] HTML & CSS Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/HTML))
+- [ ] JavaScript Basics ([Learn More](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide))
+- [ ] jQuery Overview ([Learn More](https://learn.jquery.com/))
+- [ ] REST APIs ([Learn More](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design))
+- [ ] gRPC Basics ([Learn More](https://learn.microsoft.com/en-us/aspnet/core/grpc/))
 
 ### Exercises
 
@@ -57,10 +58,10 @@ This structured learning plan is designed to help you develop essential skills i
 
 **Objective:** Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.
 
-- [ ] Version Control with Git ([Learn More](https://git-scm.com/doc)) {#git} {id="git"}
-- [ ] Test-Driven Development (TDD) ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/testing/)) {#tdd} {id="tdd"}
-- [ ] Docker Fundamentals ([Learn More](https://docs.docker.com/get-started/)) {#docker} {id="docker"}
-- [ ] Azure Basics ([Learn More](https://learn.microsoft.com/en-us/azure/)) {#azure} {id="azure"}
+- [ ] Version Control with Git ([Learn More](https://git-scm.com/doc))
+- [ ] Test-Driven Development (TDD) ([Learn More](https://learn.microsoft.com/en-us/dotnet/core/testing/))
+- [ ] Docker Fundamentals ([Learn More](https://docs.docker.com/get-started/))
+- [ ] Azure Basics ([Learn More](https://learn.microsoft.com/en-us/azure/))
 
 ### Exercises
 
@@ -72,6 +73,7 @@ This structured learning plan is designed to help you develop essential skills i
 ## Tracking Progress
 
 This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
