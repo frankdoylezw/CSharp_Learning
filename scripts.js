@@ -7,6 +7,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const progressBar = document.getElementById('progress-bar');
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    });
+
+    document.querySelectorAll('.phase-section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Back to top button
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
 
     // Load checkbox states from the server
     supabase
@@ -65,6 +105,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 });
+
+
+
 
 
 
