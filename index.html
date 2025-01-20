@@ -13,12 +13,13 @@
             margin-left: -20px; /* Adjust this value as needed */
         }
     </style>
-    <script src="https://unpkg.com/@supabase/supabase-js@2">
-        import { createClient } from '@supabase/supabase-js'    
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
-            const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+            const supabase = createClient(supabaseUrl, supabaseKey);
 
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -49,7 +50,7 @@
                         .from('checkboxes')
                         .upsert({ id, checked })
                         .then(response => {
-                            console.log('Checkbox state saved:', response);
+                            console.log(`Checkbox with id ${id} is now ${checked ? 'checked' : 'unchecked'} and saved to the database.`);
                         })
                         .catch(error => {
                             console.error('Error saving checkbox state:', error);
@@ -136,4 +137,5 @@
 
 </body>
 </html>
+
 
