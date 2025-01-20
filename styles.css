@@ -1,18 +1,50 @@
-ul {
-    list-style-type: none;
-    padding-left: 0;
+/* Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
 }
 
-ul li {
-    margin-left: -20px; /* Adjust this value as needed */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
 }
 
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Colors */
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Spacing */
 .container {
     margin-top: 20px;
-}
-
-.checkbox-label {
-    margin-left: 5px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .phase-section {
@@ -25,6 +57,44 @@ ul li {
 
 .phase-section h3 {
     margin-top: 20px; /* Adjust this value as needed */
+}
+
+/* Borders and Shadows */
+.list-group-item {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effects */
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: #28a745;
+    transition: width 0.4s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    .container {
+        padding: 15px;
+    }
 }
 
 
