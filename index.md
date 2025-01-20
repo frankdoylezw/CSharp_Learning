@@ -90,44 +90,42 @@
     <h2>Tracking Progress</h2>
     <p>This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!</p>
 
-</body>
-</html>
-[<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-    // Load checkbox states from the server
-    supabase
-        .from('checkboxes')
-        .select('*')
-        .then(response => {
-            response.data.forEach(item => {
-                const checkbox = document.getElementById(item.id);
-                if (checkbox) {
-                    checkbox.checked = item.checked;
-                }
+        // Load checkbox states from the server
+        supabase
+            .from('checkboxes')
+            .select('*')
+            .then(response => {
+                response.data.forEach(item => {
+                    const checkbox = document.getElementById(item.id);
+                    if (checkbox) {
+                        checkbox.checked = item.checked;
+                    }
+                });
+            });
+
+        // Save checkbox state to the server
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', (event) => {
+                const id = event.target.id;
+                const checked = event.target.checked;
+
+                supabase
+                    .from('checkboxes')
+                    .upsert({ id, checked })
+                    .then(response => {
+                        console.log('Checkbox state saved');
+                    });
             });
         });
-
-    // Save checkbox state to the server
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', (event) => {
-            const id = event.target.id;
-            const checked = event.target.checked;
-
-            supabase
-                .from('checkboxes')
-                .upsert({ id, checked })
-                .then(response => {
-                    console.log('Checkbox state saved');
-                });
-        });
     });
-});
-</script>]
-
+    </script>
+</body>
+</html>
