@@ -27,6 +27,7 @@
         .phase-section {
             margin-bottom: 40px; /* Adjust this value as needed */
         }
+
         .phase-section h2 {
             margin-bottom: 20px; /* Adjust this value as needed */
         }
@@ -35,6 +36,8 @@
             margin-top: 20px; /* Adjust this value as needed */
         }
     </style>
+    <!-- Include canvas-confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
@@ -76,6 +79,9 @@
                         .then(response => {
                             console.log(`Checkbox with id ${id} is now ${checked ? 'checked' : 'unchecked'} and saved to the database.`);
                             updateProgressBar();
+                            if (checked) {
+                                triggerFireworks();
+                            }
                         })
                         .catch(error => {
                             console.error('Error saving checkbox state:', error);
@@ -91,6 +97,14 @@
                 progressBar.innerText = `${Math.round(progress)}%`;
                 progressBar.setAttribute('title', `${checkedCheckboxes} out of ${totalCheckboxes} completed`);
             }
+
+            function triggerFireworks() {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
         });
     </script>
 </head>
@@ -100,7 +114,7 @@
 
         <p>This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!</p>
 
-        <h2>Progress towards Awesomeness:</h2>
+        <h2>Progress towards Awesomeness!</h2>
         <div class="progress mb-4">
             <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
         </div>
@@ -189,6 +203,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
 
 
 
