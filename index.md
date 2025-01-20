@@ -1,107 +1,159 @@
----
-layout: default
-title: Comprehensive Learning Plan
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Learning Plan</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        h2 { margin-top: 40px; }
+        section { margin-bottom: 30px; }
+        .topic { margin-left: 20px; }
+        input[type="checkbox"] { margin-right: 10px; }
+        a { color: #3498db; text-decoration: none; margin-left: 10px; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Comprehensive Learning Plan</h1>
+    <p>Track your progress through the learning phases using the checkboxes. Links to resources are provided for each topic. Your progress is automatically saved.</p>
 
-# Comprehensive Learning Plan
+    <!-- Phase 1 -->
+    <section>
+        <h2>Phase 1: C# Basics and Fundamentals</h2>
+        <p><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
 
-This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!
+        <div class="topic">
+            <input type="checkbox" id="variables">
+            <label for="variables">Variables</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="loops">
+            <label for="loops">Loops</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="methods">
+            <label for="methods">Methods</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="classes">
+            <label for="classes">Classes</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="inheritance">
+            <label for="inheritance">Inheritance</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="interfaces">
+            <label for="interfaces">Interfaces</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/" target="_blank">Learning Resource</a>
+        </div>
+    </section>
 
----
+    <!-- Phase 2 -->
+    <section>
+        <h2>Phase 2: Software Design Principles and Patterns</h2>
+        <p><strong>Objective:</strong> Understand SOLID principles and essential design patterns to write clean, maintainable, and scalable code.</p>
 
-## Phase 1: C# Basics and Fundamentals
+        <div class="topic">
+            <input type="checkbox" id="single-responsibility">
+            <label for="single-responsibility">Single Responsibility Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="open-closed">
+            <label for="open-closed">Open-Closed Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="liskov-substitution">
+            <label for="liskov-substitution">Liskov Substitution Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="interface-segregation">
+            <label for="interface-segregation">Interface Segregation Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="dependency-inversion">
+            <label for="dependency-inversion">Dependency Inversion Principle</label>
+            <a href="https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/" target="_blank">Learning Resource</a>
+        </div>
+    </section>
 
-**Objective:** Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.
+    <!-- Phase 3 -->
+    <section>
+        <h2>Phase 3: Entity Framework and Dependency Injection</h2>
+        <p><strong>Objective:</strong> Learn how to work with data using Entity Framework Core and implement Dependency Injection to decouple code.</p>
 
-### Topics
-- [ ] **Variables**  
-  [Learning Resource: Variables](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/)
-- [ ] **Loops**  
-  [Learning Resource: Loops](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops)
-- [ ] **Methods**  
-  [Learning Resource: Methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
-- [ ] **Classes**  
-  [Learning Resource: Classes](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/)
-- [ ] **Inheritance**  
-  [Learning Resource: Inheritance](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance)
-- [ ] **Interfaces**  
-  [Learning Resource: Interfaces](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/)
+        <div class="topic">
+            <input type="checkbox" id="ef-intro">
+            <label for="ef-intro">Introduction to Entity Framework</label>
+            <a href="https://learn.microsoft.com/en-us/ef/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="ef-migrations">
+            <label for="ef-migrations">EF Migrations</label>
+            <a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="ef-queries">
+            <label for="ef-queries">Writing LINQ Queries</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="dependency-injection">
+            <label for="dependency-injection">Dependency Injection Basics</label>
+            <a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection" target="_blank">Learning Resource</a>
+        </div>
+    </section>
 
-### Exercises
-- [ ] Write a **calculator class** that includes methods for addition, subtraction, multiplication, and division.
-- [ ] Create a **book library** class with methods to add, remove, and list books.
-- [ ] Refactor a simple project to use **interfaces** for better abstraction.
+    <!-- Phase 4 -->
+    <section>
+        <h2>Phase 4: Web Development and APIs</h2>
+        <p><strong>Objective:</strong> Gain proficiency in building web applications with ASP.NET MVC and interacting with APIs using REST and gRPC.</p>
 
----
+        <div class="topic">
+            <input type="checkbox" id="mvc-intro">
+            <label for="mvc-intro">Introduction to ASP.NET MVC</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="rest-api">
+            <label for="rest-api">REST API Basics</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/web-api/overview/advanced/restful-route-conventions" target="_blank">Learning Resource</a>
+        </div>
+        <div class="topic">
+            <input type="checkbox" id="grpc">
+            <label for="grpc">Introduction to gRPC</label>
+            <a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/?view=aspnetcore-6.0" target="_blank">Learning Resource</a>
+        </div>
+    </section>
 
-## Phase 2: Intermediate C# and Web Development
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-**Objective:** Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.
+            // Load progress from localStorage
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id);
+                checkbox.checked = isChecked === "true";
+            });
 
-### Topics
-- [ ] **Entity Framework Basics**  
-  [Learning Resource: Entity Framework](https://learn.microsoft.com/en-us/ef/)
-- [ ] **Dependency Injection**  
-  [Learning Resource: Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
-- [ ] **ASP.NET MVC Overview**  
-  [Learning Resource: MVC](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc)
-
-### Exercises
-- [ ] Set up a **basic database** using Entity Framework. Create a model for "Products" and implement CRUD operations.
-- [ ] Create a simple **ASP.NET MVC app** to manage employee records.
-- [ ] Use Dependency Injection to decouple logic from the application.
-
----
-
-## Phase 3: Frontend and Integration Development
-
-**Objective:** Develop skills in frontend technologies and API integration to build robust and interactive web applications.
-
-### Topics
-- [ ] **HTML & CSS Basics**  
-  [Learning Resource: HTML & CSS](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [ ] **JavaScript Basics**  
-  [Learning Resource: JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
-- [ ] **jQuery Overview**  
-  [Learning Resource: jQuery](https://learn.jquery.com/)
-- [ ] **REST APIs**  
-  [Learning Resource: REST APIs](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-- [ ] **gRPC Basics**  
-  [Learning Resource: gRPC](https://learn.microsoft.com/en-us/aspnet/core/grpc/)
-
-### Exercises
-- [ ] Build a static HTML/CSS webpage that lists employee details.
-- [ ] Add interactivity using **JavaScript** or **jQuery** for dynamic content.
-- [ ] Create a simple **REST API** that provides employee data.
-- [ ] Experiment with **gRPC** to create a basic service and client.
-
----
-
-## Phase 4: Advanced Development Practices
-
-**Objective:** Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.
-
-### Topics
-- [ ] **Version Control with Git**  
-  [Learning Resource: Git Basics](https://git-scm.com/doc)
-- [ ] **Test-Driven Development (TDD)**  
-  [Learning Resource: TDD](https://learn.microsoft.com/en-us/dotnet/core/testing/)
-- [ ] **Docker Fundamentals**  
-  [Learning Resource: Docker](https://docs.docker.com/get-started/)
-- [ ] **Azure Basics**  
-  [Learning Resource: Azure](https://learn.microsoft.com/en-us/azure/)
-
-### Exercises
-- [ ] Create a new repository and practice **branching, merging, and resolving conflicts**.
-- [ ] Write unit tests for a small project using **NUnit** or **MSTest**.
-- [ ] Build a Docker container for a small ASP.NET app and run it locally.
-- [ ] Deploy an ASP.NET app to Azure using a free tier.
-
----
-
-### Tracking Progress
-
-As you work through the phases, check off each topic and exercise to track your progress.  
-Feel free to revisit completed sections if needed for additional practice.
-
----
+            // Save progress to localStorage
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", () => {
+                    localStorage.setItem(checkbox.id, checkbox.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
