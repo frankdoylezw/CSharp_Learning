@@ -13,8 +13,8 @@
             margin-left: -20px; /* Adjust this value as needed */
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2">
+        import { createClient } from '@supabase/supabase-js'    
         document.addEventListener('DOMContentLoaded', (event) => {
             const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
