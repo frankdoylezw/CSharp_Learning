@@ -23,6 +23,10 @@
         .checkbox-label {
             margin-left: 5px;
         }
+
+        .phase-section {
+            margin-bottom: 40px;
+        }
     </style>
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
@@ -33,6 +37,7 @@
             const supabase = createClient(supabaseUrl, supabaseKey);
 
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const progressBar = document.getElementById('progress-bar');
 
             // Load checkbox states from the server
             supabase
@@ -46,6 +51,7 @@
                             checkbox.checked = item.checked;
                         }
                     });
+                    updateProgressBar();
                 })
                 .catch(error => {
                     console.error('Error loading checkbox states:', error);
@@ -62,12 +68,21 @@
                         .upsert({ id, checked })
                         .then(response => {
                             console.log(`Checkbox with id ${id} is now ${checked ? 'checked' : 'unchecked'} and saved to the database.`);
+                            updateProgressBar();
                         })
                         .catch(error => {
                             console.error('Error saving checkbox state:', error);
                         });
                 });
             });
+
+            function updateProgressBar() {
+                const totalCheckboxes = checkboxes.length;
+                const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                const progress = (checkedCheckboxes / totalCheckboxes) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressBar.innerText = `${Math.round(progress)}%`;
+            }
         });
     </script>
 </head>
@@ -77,72 +92,84 @@
 
         <p>This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!</p>
 
-        <h2>Phase 1: C# Basics and Fundamentals</h2>
-        <p><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
-        <ul class="list-group">
-            <li class="list-group-item"><input type="checkbox" id="variables"> <label class="checkbox-label" for="variables">Variables (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="loops"> <label class="checkbox-label" for="loops">Loops (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="methods"> <label class="checkbox-label" for="methods">Methods (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="classes"> <label class="checkbox-label" for="classes">Classes (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="inheritance"> <label class="checkbox-label" for="inheritance">Inheritance (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="interfaces"> <label class="checkbox-label" for="interfaces">Interfaces (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/">Learn More</a>)</label></li>
-        </ul>
+        <div class="progress mb-4">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
 
-        <h3>Exercises</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.</li>
-            <li class="list-group-item">Create a class to represent a book and include methods for borrowing and returning books.</li>
-            <li class="list-group-item">Refactor an existing program to use interfaces for better flexibility.</li>
-        </ul>
+        <div class="phase-section">
+            <h2>Phase 1: C# Basics and Fundamentals</h2>
+            <p><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><input type="checkbox" id="variables"> <label class="checkbox-label" for="variables">Variables (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="loops"> <label class="checkbox-label" for="loops">Loops (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="methods"> <label class="checkbox-label" for="methods">Methods (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="classes"> <label class="checkbox-label" for="classes">Classes (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="inheritance"> <label class="checkbox-label" for="inheritance">Inheritance (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="interfaces"> <label class="checkbox-label" for="interfaces">Interfaces (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/">Learn More</a>)</label></li>
+            </ul>
 
-        <h2>Phase 2: Intermediate C# and Web Development</h2>
-        <p><strong>Objective:</strong> Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.</p>
-        <ul class="list-group">
-            <li class="list-group-item"><input type="checkbox" id="ef"> <label class="checkbox-label" for="ef">Entity Framework Basics (<a href="https://learn.microsoft.com/en-us/ef/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="di"> <label class="checkbox-label" for="di">Dependency Injection (<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="mvc"> <label class="checkbox-label" for="mvc">ASP.NET MVC Overview (<a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc">Learn More</a>)</label></li>
-        </ul>
+            <h3>Exercises</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.</li>
+                <li class="list-group-item">Create a class to represent a book and include methods for borrowing and returning books.</li>
+                <li class="list-group-item">Refactor an existing program to use interfaces for better flexibility.</li>
+            </ul>
+        </div>
 
-        <h3>Exercises</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Set up a simple database with Entity Framework to manage employee records.</li>
-            <li class="list-group-item">Implement Dependency Injection in an ASP.NET Core project to manage service lifetimes.</li>
-            <li class="list-group-item">Create a small MVC application to display and edit product details.</li>
-        </ul>
+        <div class="phase-section">
+            <h2>Phase 2: Intermediate C# and Web Development</h2>
+            <p><strong>Objective:</strong> Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><input type="checkbox" id="ef"> <label class="checkbox-label" for="ef">Entity Framework Basics (<a href="https://learn.microsoft.com/en-us/ef/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="di"> <label class="checkbox-label" for="di">Dependency Injection (<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="mvc"> <label class="checkbox-label" for="mvc">ASP.NET MVC Overview (<a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/introduction/getting-started-with-mvc">Learn More</a>)</label></li>
+            </ul>
 
-        <h2>Phase 3: Frontend and Integration Development</h2>
-        <p><strong>Objective:</strong> Develop skills in frontend technologies and API integration to build robust and interactive web applications.</p>
-        <ul class="list-group">
-            <li class="list-group-item"><input type="checkbox" id="html"> <label class="checkbox-label" for="html">HTML & CSS Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="js"> <label class="checkbox-label" for="js">JavaScript Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="jquery"> <label class="checkbox-label" for="jquery">jQuery Overview (<a href="https://learn.jquery.com/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="rest"> <label class="checkbox-label" for="rest">REST APIs (<a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="grpc"> <label class="checkbox-label" for="grpc">gRPC Basics (<a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/">Learn More</a>)</label></li>
-        </ul>
+            <h3>Exercises</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Set up a simple database with Entity Framework to manage employee records.</li>
+                <li class="list-group-item">Implement Dependency Injection in an ASP.NET Core project to manage service lifetimes.</li>
+                <li class="list-group-item">Create a small MVC application to display and edit product details.</li>
+            </ul>
+        </div>
 
-        <h3>Exercises</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Create a basic HTML page styled with CSS to display a user profile.</li>
-            <li class="list-group-item">Write JavaScript to validate a user input form.</li>
-            <li class="list-group-item">Build a simple application that consumes a REST API to fetch and display data.</li>
-        </ul>
+        <div class="phase-section">
+            <h2>Phase 3: Frontend and Integration Development</h2>
+            <p><strong>Objective:</strong> Develop skills in frontend technologies and API integration to build robust and interactive web applications.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><input type="checkbox" id="html"> <label class="checkbox-label" for="html">HTML & CSS Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="js"> <label class="checkbox-label" for="js">JavaScript Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="jquery"> <label class="checkbox-label" for="jquery">jQuery Overview (<a href="https://learn.jquery.com/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="rest"> <label class="checkbox-label" for="rest">REST APIs (<a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="grpc"> <label class="checkbox-label" for="grpc">gRPC Basics (<a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/">Learn More</a>)</label></li>
+            </ul>
 
-        <h2>Phase 4: Advanced Development Practices</h2>
-        <p><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
-        <ul class="list-group">
-            <li class="list-group-item"><input type="checkbox" id="git"> <label class="checkbox-label" for="git">Version Control with Git (<a href="https://git-scm.com/doc">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="tdd"> <label class="checkbox-label" for="tdd">Test-Driven Development (TDD) (<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="docker"> <label class="checkbox-label" for="docker">Docker Fundamentals (<a href="https://docs.docker.com/get-started/">Learn More</a>)</label></li>
-            <li class="list-group-item"><input type="checkbox" id="azure"> <label class="checkbox-label" for="azure">Azure Basics (<a href="https://learn.microsoft.com/en-us/azure/">Learn More</a>)</label></li>
-        </ul>
+            <h3>Exercises</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Create a basic HTML page styled with CSS to display a user profile.</li>
+                <li class="list-group-item">Write JavaScript to validate a user input form.</li>
+                <li class="list-group-item">Build a simple application that consumes a REST API to fetch and display data.</li>
+            </ul>
+        </div>
 
-        <h3>Exercises</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Use Git to clone a repository, create branches, and merge changes.</li>
-            <li class="list-group-item">Write unit tests for a small class using NUnit.</li>
-            <li class="list-group-item">Containerize a basic application with Docker and deploy it locally.</li>
-            <li class="list-group-item">Set up a basic Azure App Service to host a web application.</li>
-        </ul>
+        <div class="phase-section">
+            <h2>Phase 4: Advanced Development Practices</h2>
+            <p><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><input type="checkbox" id="git"> <label class="checkbox-label" for="git">Version Control with Git (<a href="https://git-scm.com/doc">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="tdd"> <label class="checkbox-label" for="tdd">Test-Driven Development (TDD) (<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="docker"> <label class="checkbox-label" for="docker">Docker Fundamentals (<a href="https://docs.docker.com/get-started/">Learn More</a>)</label></li>
+                <li class="list-group-item"><input type="checkbox" id="azure"> <label class="checkbox-label" for="azure">Azure Basics (<a href="https://learn.microsoft.com/en-us/azure/">Learn More</a>)</label></li>
+            </ul>
+
+            <h3>Exercises</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Use Git to clone a repository, create branches, and merge changes.</li>
+                <li class="list-group-item">Write unit tests for a small class using NUnit.</li>
+                <li class="list-group-item">Containerize a basic application with Docker and deploy it locally.</li>
+                <li class="list-group-item">Set up a basic Azure App Service to host a web application.</li>
+            </ul>
+        </div>
 
         <h2>Tracking Progress</h2>
         <p>This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!</p>
@@ -153,6 +180,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 
 
