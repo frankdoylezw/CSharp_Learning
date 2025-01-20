@@ -85,8 +85,8 @@ This learning plan includes interactive checkboxes that allow you to track your 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
-    const supabaseUrl = 'https://csharplearning-frankdoylezw.aws-eu-west-1.turso.io';
-    const supabaseKey = 'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MzczNzgyNzksImlkIjoiYzIwNmY5MDItMTU3Ny00ZDIwLTkzMWQtZDMyZjhjMWJhNDA1IiwicmlkIjoiZTcyMzIyZTEtODkxMy00NDNlLThhMjktY2VmMjExMWM4NWFiIn0.NMzvmPcTzN807gjYcZnHsFfbbwN6NOqZ0JT3fRhYpGDkhby4irFdsCzR4Z3gtMll7Tby_Xx5UsFJGB4WWSPcCw';
+    const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
