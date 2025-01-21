@@ -1,0 +1,9 @@
+# .gitignore
+.copilot/
+.copilotignore
+/.vs/CSharpLearning/copilot-chat/ec8c866d/sessions
+/.vs/CSharpLearning/CopilotIndices/17.12.53.23981
+/.vs/CSharpLearning/FileContentIndex
+/.vs/CSharpLearning/v17
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
