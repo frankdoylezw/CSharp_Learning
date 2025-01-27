@@ -163,29 +163,227 @@
 
             <h3>Exercises</h3>
             <ul class="list-group">
-                <li class="list-group-item">Create a basic HTML page styled with CSS to display a user profile.</li>
-                <li class="list-group-item">Write JavaScript to validate a user input form.</li>
-                <li class="list-group-item">Build a simple application that consumes a REST API to fetch and display data.</li>
+                <li class="list-group-item">
+                    Create a basic HTML page styled with CSS to display a user profile.
+                    <a href="#" data-toggle="modal" data-target="#htmlModal">(Detail)</a>
+                </li>
+                <li class="list-group-item">
+                    Write JavaScript to validate a user input form.
+                    <a href="#" data-toggle="modal" data-target="#jsModal">(Detail)</a>
+                </li>
+                <li class="list-group-item">
+                    Build a simple application that consumes a REST API to fetch and display data.
+                    <a href="#" data-toggle="modal" data-target="#restModal">(Detail)</a>
+                </li>
             </ul>
         </div>
 
-        <div class="phase-section">
-            <h2>Phase 4: Advanced Development Practices</h2>
-            <p><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><input type="checkbox" id="git"> <label class="checkbox-label" for="git">Version Control with Git (<a href="https://git-scm.com/doc">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="tdd"> <label class="checkbox-label" for="tdd">Test-Driven Development (TDD) (<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="docker"> <label class="checkbox-label" for="docker">Docker Fundamentals (<a href="https://docs.docker.com/get-started/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="azure"> <label class="checkbox-label" for="azure">Azure Basics (<a href="https://learn.microsoft.com/en-us/azure/">Learn More</a>)</label></li>
-            </ul>
+        <!-- HTML Modal -->
+        <div class="modal fade" id="htmlModal" tabindex="-1" aria-labelledby="htmlModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="htmlModalLabel">Steps to Create a Basic HTML Page</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create a new HTML file.</li>
+                            <li>Add the basic HTML structure (doctype, html, head, and body tags).</li>
+                            <li>Include a CSS file to style the page.</li>
+                            <li>Add HTML elements to display the user profile (e.g., div, img, h1, p).</li>
+                            <li>Apply CSS styles to the HTML elements to make the page visually appealing.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <h3>Exercises</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Use Git to clone a repository, create branches, and merge changes.</li>
-                <li class="list-group-item">Write unit tests for a small class using NUnit.</li>
-                <li class="list-group-item">Containerize a basic application with Docker and deploy it locally.</li>
-                <li class="list-group-item">Set up a basic Azure App Service to host a web application.</li>
-            </ul>
+        <!-- JavaScript Modal -->
+        <div class="modal fade" id="jsModal" tabindex="-1" aria-labelledby="jsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="jsModalLabel">Steps to Write JavaScript to Validate a User Input Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create a new HTML file with a form element.</li>
+                            <li>Add input fields for user data (e.g., name, email, password).</li>
+                            <li>Include a JavaScript file to handle form validation.</li>
+                            <li>Write JavaScript functions to validate each input field (e.g., check if the email is in the correct format).</li>
+                            <li>Attach event listeners to the form to trigger validation on form submission.</li>
+                            <li>Display error messages next to the input fields if validation fails.</li>
+                            <li>Prevent form submission if any validation checks fail.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REST API Modal -->
+        <div class="modal fade" id="restModal" tabindex="-1" aria-labelledby="restModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="restModalLabel">Steps to Build a Simple Application that Consumes a REST API</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create a new HTML file with a basic structure.</li>
+                            <li>Include a JavaScript file to handle API requests.</li>
+                            <li>Write a function to make an HTTP GET request to the REST API using `fetch` or `XMLHttpRequest`.</li>
+                            <li>Parse the JSON response from the API.</li>
+                            <li>Display the fetched data in the HTML file (e.g., in a table or list).</li>
+                            <li>Handle any errors that may occur during the API request.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Exercises</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                Use Git to clone a repository, create branches, and merge changes.
+                <a href="#" data-toggle="modal" data-target="#gitModal">(Detail)</a>
+            </li>
+            <li class="list-group-item">
+                Write unit tests for a small class using NUnit.
+                <a href="#" data-toggle="modal" data-target="#tddModal">(Detail)</a>
+            </li>
+            <li class="list-group-item">
+                Containerize a basic application with Docker and deploy it locally.
+                <a href="#" data-toggle="modal" data-target="#dockerModal">(Detail)</a>
+            </li>
+            <li class="list-group-item">
+                Set up a basic Azure App Service to host a web application.
+                <a href="#" data-toggle="modal" data-target="#azureModal">(Detail)</a>
+            </li>
+        </ul>
+
+        <!-- Git Modal -->
+        <div class="modal fade" id="gitModal" tabindex="-1" aria-labelledby="gitModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gitModalLabel">Steps to Use Git for Version Control</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install Git on your machine.</li>
+                            <li>Clone a repository using the `git clone` command.</li>
+                            <li>Create a new branch using the `git branch` command.</li>
+                            <li>Switch to the new branch using the `git checkout` command.</li>
+                            <li>Make changes to the code and commit them using the `git commit` command.</li>
+                            <li>Merge the changes back to the main branch using the `git merge` command.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TDD Modal -->
+        <div class="modal fade" id="tddModal" tabindex="-1" aria-labelledby="tddModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tddModalLabel">Steps to Write Unit Tests Using NUnit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install the NUnit framework and NUnit3TestAdapter via NuGet.</li>
+                            <li>Create a new test project in your solution.</li>
+                            <li>Write test methods using the `[Test]` attribute.</li>
+                            <li>Use assertions to verify the expected outcomes.</li>
+                            <li>Run the tests using the Test Explorer in Visual Studio.</li>
+                            <li>Refactor the code and ensure all tests pass.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docker Modal -->
+        <div class="modal fade" id="dockerModal" tabindex="-1" aria-labelledby="dockerModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dockerModalLabel">Steps to Containerize an Application with Docker</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install Docker on your machine.</li>
+                            <li>Create a Dockerfile in the root of your project.</li>
+                            <li>Define the base image and dependencies in the Dockerfile.</li>
+                            <li>Build the Docker image using the `docker build` command.</li>
+                            <li>Run a container from the image using the `docker run` command.</li>
+                            <li>Verify that the application is running inside the container.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Azure Modal -->
+        <div class="modal fade" id="azureModal" tabindex="-1" aria-labelledby="azureModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="azureModalLabel">Steps to Set Up a Basic Azure App Service</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create an Azure account if you don't have one.</li>
+                            <li>Navigate to the Azure portal and create a new App Service.</li>
+                            <li>Configure the App Service settings (e.g., resource group, app name, runtime stack).</li>
+                            <li>Deploy your application to the App Service using the deployment method of your choice (e.g., Git, FTP, Visual Studio).</li>
+                            <li>Verify that the application is running on the Azure App Service.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <h2>Tracking Progress</h2>
