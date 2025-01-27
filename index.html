@@ -288,115 +288,114 @@
                     <a href="#" data-toggle="modal" data-target="#azureModal">(Detail)</a>
                 </li>
             </ul>
+        </div>
 
-            <!-- Git Modal -->
-            <div class="modal fade" id="gitModal" tabindex="-1" aria-labelledby="gitModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="gitModalLabel">Steps to Use Git for Version Control</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <ol>
-                                <li>Install Git on your machine.</li>
-                                <li>Clone a repository using the `git clone` command.</li>
-                                <li>Create a new branch using the `git branch` command.</li>
-                                <li>Switch to the new branch using the `git checkout` command.</li>
-                                <li>Make changes to the code and commit them using the `git commit` command.</li>
-                                <li>Merge the changes back to the main branch using the `git merge` command.</li>
-                            </ol>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+        <!-- Git Modal -->
+        <div class="modal fade" id="gitModal" tabindex="-1" aria-labelledby="gitModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gitModalLabel">Steps to Use Git for Version Control</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-            </div>
-
-            <!-- TDD Modal -->
-            <div class="modal fade" id="tddModal" tabindex="-1" aria-labelledby="tddModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tddModalLabel">Steps to Write Unit Tests Using NUnit</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <ol>
-                                <li>Install the NUnit framework and NUnit3TestAdapter via NuGet.</li>
-                                <li>Create a new test project in your solution.</li>
-                                <li>Write test methods using the `[Test]` attribute.</li>
-                                <li>Use assertions to verify the expected outcomes.</li>
-                                <li>Run the tests using the Test Explorer in Visual Studio.</li>
-                                <li>Refactor the code and ensure all tests pass.</li>
-                            </ol>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install Git on your machine.</li>
+                            <li>Clone a repository using the `git clone` command.</li>
+                            <li>Create a new branch using the `git branch` command.</li>
+                            <li>Switch to the new branch using the `git checkout` command.</li>
+                            <li>Make changes to the code and commit them using the `git commit` command.</li>
+                            <li>Merge the changes back to the main branch using the `git merge` command.</li>
+                        </ol>
                     </div>
-                </div>
-            </div>
-
-            <!-- Docker Modal -->
-            <div class="modal fade" id="dockerModal" tabindex="-1" aria-labelledby="dockerModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="dockerModalLabel">Steps to Containerize an Application with Docker</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <ol>
-                                <li>Install Docker on your machine.</li>
-                                <li>Create a Dockerfile in the root of your project.</li>
-                                <li>Define the base image and dependencies in the Dockerfile.</li>
-                                <li>Build the Docker image using the `docker build` command.</li>
-                                <li>Run a container from the image using the `docker run` command.</li>
-                                <li>Verify that the application is running inside the container.</li>
-                            </ol>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Azure Modal -->
-            <div class="modal fade" id="azureModal" tabindex="-1" aria-labelledby="azureModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="azureModalLabel">Steps to Set Up a Basic Azure App Service</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <ol>
-                                <li>Create an Azure account if you don't have one.</li>
-                                <li>Navigate to the Azure portal and create a new App Service.</li>
-                                <li>Configure the App Service settings (e.g., resource group, app name, runtime stack).</li>
-                                <li>Deploy your application to the App Service using the deployment method of your choice (e.g., Git, FTP, Visual Studio).</li>
-                                <li>Verify that the application is running on the Azure App Service.</li>
-                            </ol>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- TDD Modal -->
+        <div class="modal fade" id="tddModal" tabindex="-1" aria-labelledby="tddModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tddModalLabel">Steps to Write Unit Tests Using NUnit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install the NUnit framework and NUnit3TestAdapter via NuGet.</li>
+                            <li>Create a new test project in your solution.</li>
+                            <li>Write test methods using the `[Test]` attribute.</li>
+                            <li>Use assertions to verify the expected outcomes.</li>
+                            <li>Run the tests using the Test Explorer in Visual Studio.</li>
+                            <li>Refactor the code and ensure all tests pass.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docker Modal -->
+        <div class="modal fade" id="dockerModal" tabindex="-1" aria-labelledby="dockerModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dockerModalLabel">Steps to Containerize an Application with Docker</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Install Docker on your machine.</li>
+                            <li>Create a Dockerfile in the root of your project.</li>
+                            <li>Define the base image and dependencies in the Dockerfile.</li>
+                            <li>Build the Docker image using the `docker build` command.</li>
+                            <li>Run a container from the image using the `docker run` command.</li>
+                            <li>Verify that the application is running inside the container.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Azure Modal -->
+        <div class="modal fade" id="azureModal" tabindex="-1" aria-labelledby="azureModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="azureModalLabel">Steps to Set Up a Basic Azure App Service</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create an Azure account if you don't have one.</li>
+                            <li>Navigate to the Azure portal and create a new App Service.</li>
+                            <li>Configure the App Service settings (e.g., resource group, app name, runtime stack).</li>
+                            <li>Deploy your application to the App Service using the deployment method of your choice (e.g., Git, FTP, Visual Studio).</li>
+                            <li>Verify that the application is running on the Azure App Service.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <h2>Tracking Progress</h2>
         <p>This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!</p>
