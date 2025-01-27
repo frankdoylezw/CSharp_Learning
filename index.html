@@ -39,10 +39,40 @@
 
             <h3>Exercises</h3>
             <ul class="list-group">
-                <li class="list-group-item">Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.</li>
+                <li class="list-group-item">
+                    Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.
+                    <a href="#" data-toggle="modal" data-target="#calculatorModal">Detail</a>
+                </li>
                 <li class="list-group-item">Create a class to represent a book and include methods for borrowing and returning books.</li>
                 <li class="list-group-item">Refactor an existing program to use interfaces for better flexibility.</li>
             </ul>
+        </div>
+
+        <!-- Calculator Modal -->
+        <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="calculatorModalLabel">Steps to Write a Calculator Program</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create a new C# console application.</li>
+                            <li>Define methods for addition, subtraction, multiplication, and division.</li>
+                            <li>Prompt the user to enter two numbers.</li>
+                            <li>Ask the user to choose an operation (addition, subtraction, multiplication, or division).</li>
+                            <li>Call the corresponding method based on the user's choice and display the result.</li>
+                            <li>Handle any potential errors, such as division by zero.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="phase-section">
