@@ -41,10 +41,16 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.
-                    <a href="#" data-toggle="modal" data-target="#calculatorModal">Detail</a>
+                    <a href="#" data-toggle="modal" data-target="#calculatorModal">(Detail)</a>
                 </li>
-                <li class="list-group-item">Create a class to represent a book and include methods for borrowing and returning books.</li>
-                <li class="list-group-item">Refactor an existing program to use interfaces for better flexibility.</li>
+                <li class="list-group-item">
+                    Create a class to represent a book and include methods for borrowing and returning books.
+                    <a href="#" data-toggle="modal" data-target="#bookModal">(Detail)</a>
+                </li>
+                <li class="list-group-item">
+                    Refactor an existing program to use interfaces for better flexibility.
+                    <a href="#" data-toggle="modal" data-target="#interfaceModal">(Detail)</a>
+                </li>
             </ul>
         </div>
 
@@ -66,6 +72,58 @@
                             <li>Ask the user to choose an operation (addition, subtraction, multiplication, or division).</li>
                             <li>Call the corresponding method based on the user's choice and display the result.</li>
                             <li>Handle any potential errors, such as division by zero.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Modal -->
+        <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookModalLabel">Steps to Create a Book Class</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Create a new C# class named `Book`.</li>
+                            <li>Define properties for the book's title, author, and status (e.g., borrowed or available).</li>
+                            <li>Implement methods for borrowing and returning the book.</li>
+                            <li>Ensure the borrowing method updates the book's status to borrowed.</li>
+                            <li>Ensure the returning method updates the book's status to available.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interface Modal -->
+        <div class="modal fade" id="interfaceModal" tabindex="-1" aria-labelledby="interfaceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="interfaceModalLabel">Steps to Refactor a Program Using Interfaces</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Identify the parts of your program that can benefit from using interfaces.</li>
+                            <li>Create an interface that defines the required methods and properties.</li>
+                            <li>Implement the interface in the relevant classes.</li>
+                            <li>Refactor the code to use the interface type instead of concrete classes.</li>
+                            <li>Test the refactored code to ensure it works as expected.</li>
                         </ol>
                     </div>
                     <div class="modal-footer">
