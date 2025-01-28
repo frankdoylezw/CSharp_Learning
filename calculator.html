@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,194 @@
     <div class="container mt-5">
         <h1>Steps to Write a Calculator Program</h1>
         <ol>
-            <li>Create a new C# console application.</li>
-            <li>Define methods for addition, subtraction, multiplication, and division.</li>
-            <li>Prompt the user to enter two numbers.</li>
-            <li>Ask the user to choose an operation (addition, subtraction, multiplication, or division).</li>
-            <li>Call the corresponding method based on the user's choice and display the result.</li>
-            <li>Handle any potential errors, such as division by zero.</li>
+            <li>
+                <strong>Create a new C# console application:</strong>
+                <ol>
+                    <li>Open Visual Studio.</li>
+                    <li>Click on <em>Create a new project</em>.</li>
+                    <li>Select <em>Console App (.NET Core)</em> and click <em>Next</em>.</li>
+                    <li>Enter the project name (e.g., <em>CalculatorApp</em>) and click <em>Create</em>.</li>
+                </ol>
+            </li>
+            <li>
+                <strong>Define methods for addition, subtraction, multiplication, and division:</strong>
+                <pre><code class="language-csharp">using System;
+
+namespace CalculatorApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Main method code will go here
+        }
+
+        static double Add(double a, double b)
+        {
+            return a + b;
+        }
+
+        static double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+
+        static double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+
+        static double Divide(double a, double b)
+        {
+            if (b == 0)
+            {
+                throw new DivideByZeroException("Cannot divide by zero.");
+            }
+            return a / b;
+        }
+    }
+}
+</code></pre>
+            </li>
+            <li>
+                <strong>Prompt the user to enter two numbers:</strong>
+                <pre><code class="language-csharp">static void Main(string[] args)
+{
+    Console.WriteLine("Enter the first number:");
+    double num1 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Enter the second number:");
+    double num2 = Convert.ToDouble(Console.ReadLine());
+
+    // Code to choose operation and call methods will go here
+}
+</code></pre>
+            </li>
+            <li>
+                <strong>Ask the user to choose an operation (addition, subtraction, multiplication, or division):</strong>
+                <pre><code class="language-csharp">static void Main(string[] args)
+{
+    Console.WriteLine("Enter the first number:");
+    double num1 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Enter the second number:");
+    double num2 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Choose an operation: +, -, *, /");
+    string operation = Console.ReadLine();
+
+    double result = 0;
+
+    switch (operation)
+    {
+        case "+":
+            result = Add(num1, num2);
+            break;
+        case "-":
+            result = Subtract(num1, num2);
+            break;
+        case "*":
+            result = Multiply(num1, num2);
+            break;
+        case "/":
+            result = Divide(num1, num2);
+            break;
+        default:
+            Console.WriteLine("Invalid operation.");
+            return;
+    }
+
+    Console.WriteLine($"The result is: {result}");
+}
+</code></pre>
+            </li>
+            <li>
+                <strong>Call the corresponding method based on the user's choice and display the result:</strong>
+                <pre><code class="language-csharp">static void Main(string[] args)
+{
+    Console.WriteLine("Enter the first number:");
+    double num1 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Enter the second number:");
+    double num2 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Choose an operation: +, -, *, /");
+    string operation = Console.ReadLine();
+
+    double result = 0;
+
+    switch (operation)
+    {
+        case "+":
+            result = Add(num1, num2);
+            break;
+        case "-":
+            result = Subtract(num1, num2);
+            break;
+        case "*":
+            result = Multiply(num1, num2);
+            break;
+        case "/":
+            result = Divide(num1, num2);
+            break;
+        default:
+            Console.WriteLine("Invalid operation.");
+            return;
+    }
+
+    Console.WriteLine($"The result is: {result}");
+}
+</code></pre>
+            </li>
+            <li>
+                <strong>Handle any potential errors, such as division by zero:</strong>
+                <pre><code class="language-csharp">static void Main(string[] args)
+{
+    try
+    {
+        Console.WriteLine("Enter the first number:");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter the second number:");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Choose an operation: +, -, *, /");
+        string operation = Console.ReadLine();
+
+        double result = 0;
+
+        switch (operation)
+        {
+            case "+":
+                result = Add(num1, num2);
+                break;
+            case "-":
+                result = Subtract(num1, num2);
+                break;
+            case "*":
+                result = Multiply(num1, num2);
+                break;
+            case "/":
+                result = Divide(num1, num2);
+                break;
+            default:
+                Console.WriteLine("Invalid operation.");
+                return;
+        }
+
+        Console.WriteLine($"The result is: {result}");
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Invalid input. Please enter numeric values.");
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
+</code></pre>
+            </li>
         </ol>
         <a href="index.html" class="btn btn-primary">Back to Home</a>
     </div>
@@ -25,3 +207,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
