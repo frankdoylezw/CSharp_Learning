@@ -8,6 +8,6 @@ public class PlaywrightTests : PageTest
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
         var title = await Page.TitleAsync();
-        Assert.That(title, Does.Contain("CSharp Learning"));
+        Assert.That(title, Does.Contain("Structured Learning Plan for Web Application Development"));
     }
 }
