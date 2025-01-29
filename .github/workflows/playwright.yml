@@ -28,5 +28,6 @@ jobs:
       - name: Build project
         run: dotnet build --configuration Release
 
-      - name: Run tests
-        run: dotnet test --configuration Release
+      - name: Run Playwright Tests
+        working-directory: tests
+        run: dotnet test

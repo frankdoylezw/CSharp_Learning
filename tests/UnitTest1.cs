@@ -1,15 +1,13 @@
-﻿namespace tests;
+﻿using Microsoft.Playwright.NUnit;
 
-public class Tests
+[TestFixture]
+public class PlaywrightTests : PageTest
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
-    public void Test1()
+    public async Task HomepageLoadsCorrectly()
     {
-        Assert.Pass();
+        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        var title = await Page.TitleAsync();
+        Assert.That(title, Does.Contain("CSharp Learning"));
     }
 }
