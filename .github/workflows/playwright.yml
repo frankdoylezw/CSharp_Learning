@@ -48,5 +48,3 @@ jobs:
     - name: Run Playwright Tests
       working-directory: tests
       run: dotnet test
-
-
