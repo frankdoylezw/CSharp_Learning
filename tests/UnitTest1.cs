@@ -15,11 +15,9 @@ public class PlaywrightTests : PageTest
     public async Task MyTest()
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        await Page.Locator("label:has-text('Variables (Learn More)')").ClickAsync();
         await Page.Locator("li:has-text('Write a simple calculator') a").ClickAsync();
-        await Expect(Page.Locator("h1")).ToContainTextAsync("Steps to Write a Calculator Program");
         await Page.Locator("a:has-text('Back to Home')").ClickAsync();
-        await Page.Locator("button:has-text('Back to Top')").ClickAsync();
+        await Expect(Page.Locator("body")).ToContainTextAsync("This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!");
     }
 
 }
