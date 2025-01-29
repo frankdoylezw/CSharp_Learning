@@ -5,29 +5,41 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0'
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
 
-      - name: Install Playwright
-        run: dotnet tool install --global Microsoft.Playwright.CLI && playwright install
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Restore dependencies
-        run: dotnet restore
+    - name: Install Playwright CLI
+      run: dotnet tool install --global Microsoft.Playwright.CLI
 
-      - name: Build project
-        run: dotnet build --configuration Release
+    - name: Install Playwright Browsers
+      run: playwright install
+      working-directory: tests
 
-      - name: Run Playwright Tests
-        working-directory: tests
-        run: dotnet test
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Run Playwright Tests
+      working-directory: tests
+      run: dotnet test
+
