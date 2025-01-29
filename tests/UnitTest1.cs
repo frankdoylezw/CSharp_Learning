@@ -15,11 +15,11 @@ public class PlaywrightTests : PageTest
     public async Task MyTest()
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        await Page.Locator("label").Filter(new() { HasText = "Variables (Learn More)" }).GetByRole(AriaRole.Link).ClickAsync();
-        await Page.Locator("li").Filter(new() { HasText = "Write a simple calculator" }).GetByRole(AriaRole.Link).ClickAsync();
-        await Expect(Page.GetByRole(AriaRole.Heading)).ToContainTextAsync("Steps to Write a Calculator Program");
-        await Page.GetByRole(AriaRole.Link, new() { Name = "Back to Home" }).ClickAsync();
-        await Page.GetByRole(AriaRole.Button, new() { Name = "Back to Top" }).ClickAsync();
+        await Page.Locator("label:has-text('Variables (Learn More)')").ClickAsync();
+        await Page.Locator("li:has-text('Write a simple calculator') a").ClickAsync();
+        await Expect(Page.Locator("h1")).ToContainTextAsync("Steps to Write a Calculator Program");
+        await Page.Locator("a:has-text('Back to Home')").ClickAsync();
+        await Page.Locator("button:has-text('Back to Top')").ClickAsync();
     }
 
 }
