@@ -29,17 +29,24 @@ jobs:
     - name: Install Playwright CLI
       run: dotnet tool install --global Microsoft.Playwright.CLI
 
-    - name: Install Playwright Browsers
-      run: playwright install
+    - name: Add Playwright Package
       working-directory: tests
+      run: dotnet add package Microsoft.Playwright
 
     - name: Restore dependencies
+      working-directory: tests
       run: dotnet restore
 
     - name: Build
+      working-directory: tests
       run: dotnet build --configuration Release --no-restore
+
+    - name: Install Playwright Browsers
+      working-directory: tests
+      run: playwright install
 
     - name: Run Playwright Tests
       working-directory: tests
       run: dotnet test
+
 
