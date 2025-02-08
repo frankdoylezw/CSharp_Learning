@@ -1,3 +1,6 @@
+Understood. Here is your updated `index.html` file with the new content you provided, while maintaining the checkbox structure and progress bar from the old page:
+
+```html name=index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,7 @@
 <body>
     <div class="fixed-header">
         <h1><i class="fas fa-graduation-cap"></i> Structured Learning Plan for Web Application Development</h1>
-        <p>This structured learning plan is designed to help you develop essential skills in C# and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!</p>
+        <p>This structured learning plan is designed to help you develop essential skills in ASP.NET Core and web application development. Each phase builds upon the previous one, with clear objectives, actionable tasks, and resources to support your progress. Check off tasks as you complete them!</p>
         <div class="progress">
             <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
         </div>
@@ -26,465 +29,300 @@
 
     <div class="container" style="margin-top: 150px;">
         <div class="phase-section">
-            <h2>Phase 1: C# Basics and Fundamentals</h2>
-            <p><strong>Objective:</strong> Refresh foundational C# skills, including variables, loops, methods, classes, and interfaces, to build a strong base for more advanced topics.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><input type="checkbox" id="variables"> <label class="checkbox-label" for="variables">Variables (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="loops"> <label class="checkbox-label" for="loops">Loops (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/control-flow/for-and-foreach-loops">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="methods"> <label class="checkbox-label" for="methods">Methods (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="classes"> <label class="checkbox-label" for="classes">Classes (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="inheritance"> <label class="checkbox-label" for="inheritance">Inheritance (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="interfaces"> <label class="checkbox-label" for="interfaces">Interfaces (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/">Learn More</a>)</label></li>
-            </ul>
-
-            <h3>Exercises</h3>
+            <h2>Introduction to ASP.NET</h2>
+            <h3>1. dotnet cli</h3>
+            <p><strong>Module Goal:</strong> Be able to explain the most common commands with their options and use them throughout the development process.</p>
             <ul class="list-group">
                 <li class="list-group-item">
-                    Write a simple calculator program that uses methods for addition, subtraction, multiplication, and division.
-                    <a href="calculator.html">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Create a class to represent a book and include methods for borrowing and returning books.
-                    <a href="#" data-toggle="modal" data-target="#bookModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Refactor an existing program to use interfaces for better flexibility.
-                    <a href="#" data-toggle="modal" data-target="#interfaceModal">(Detail)</a>
+                    <input type="checkbox" id="dotnet-cli"> 
+                    <label class="checkbox-label" for="dotnet-cli">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/core/tools/">Microsoft: .NET CLI overview</a></li>
+                            <li><a href="https://www.tutorialsteacher.com/core/dotnet-core-cli">Tutorials Teacher: .NET Core Command-Line Interface</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, Reference - 2, 2.2 Creating your first ASP.NET Core application - p. 32</a></li>
+                        </ul>
+                    </label>
                 </li>
             </ul>
-        </div>
 
-        <!-- Calculator Modal -->
-        <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="calculatorModalLabel">Steps to Write a Calculator Program</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new C# console application.</li>
-                            <li>Define methods for addition, subtraction, multiplication, and division.</li>
-                            <li>Prompt the user to enter two numbers.</li>
-                            <li>Ask the user to choose an operation (addition, subtraction, multiplication, or division).</li>
-                            <li>Call the corresponding method based on the user's choice and display the result.</li>
-                            <li>Handle any potential errors, such as division by zero.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>2. ASP.NET Web Application Starting Template</h3>
+            <p><strong>Module Goal:</strong> Be able to explain the purpose and use of each of the files and folders that are generated by the starting template of an ASP.NET application.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="aspnet-template"> 
+                    <label class="checkbox-label" for="aspnet-template">Resources:
+                        <ul>
+                            <li><a href="https://www.tutorialsteacher.com/core/create-aspnet-core-mvc-application">Tutorials Teacher: Create ASP.NET Core MVC Application</a></li>
+                            <li><a href="https://www.tutorialsteacher.com/core/wwwroot-folder">Tutorials Teacher: wwwroot Folder</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/">Microsoft: ASP.NET Core fundamentals overview</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 2.5 The csproj project file - p. 38, 2.6 The Program class - p. 41, 2.7 The Startup class - p. 44</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- Book Modal -->
-        <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="bookModalLabel">Steps to Create a Book Class</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new C# class named `Book`.</li>
-                            <li>Define properties for the book's title, author, and status (e.g., borrowed or available).</li>
-                            <li>Implement methods for borrowing and returning the book.</li>
-                            <li>Ensure the borrowing method updates the book's status to borrowed.</li>
-                            <li>Ensure the returning method updates the book's status to available.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>3. Dependency Injection</h3>
+            <p><strong>Module Goal:</strong> Describe the purpose of Dependency Injection and be capable of configuring dependencies within ASP.NET's Dependency Injection framework.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="dependency-injection"> 
+                    <label class="checkbox-label" for="dependency-injection">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection">Microsoft: Dependency injection in ASP.NET Core</a></li>
+                            <li><a href="https://www.codeproject.com/Articles/1190195/Exploring-the-Microsoft-Extensions-DependencyInjec">CodeProject: Exploring the Microsoft.Extensions.DependencyInjection Machinery</a></li>
+                            <li><a href="https://stackoverflow.com/questions/38619536/how-can-i-use-microsoft-extensions-dependencyinjection-in-console-app">StackOverflow: How can I use Microsoft.Extensions.DependencyInjection</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 10 Service configuration with dependency injection - p. 267</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- Interface Modal -->
-        <div class="modal fade" id="interfaceModal" tabindex="-1" aria-labelledby="interfaceModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="interfaceModalLabel">Steps to Refactor a Program Using Interfaces</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Identify the parts of your program that can benefit from using interfaces.</li>
-                            <li>Create an interface that defines the required methods and properties.</li>
-                            <li>Implement the interface in the relevant classes.</li>
-                            <li>Refactor the code to use the interface type instead of concrete classes.</li>
-                            <li>Test the refactored code to ensure it works as expected.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+            <h3>4. Application Configuration using CreateDefaultBuilder</h3>
+            <p><strong>Module Goal:</strong> Explain CreateDefaultBuilder's purpose and uses. Identify common configuration patterns in ASP.NET Core.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="create-default-builder"> 
+                    <label class="checkbox-label" for="create-default-builder">Resources:
+                        <ul>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 11 Configuring an ASP.NET Core application - p. 303</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
         </div>
 
         <div class="phase-section">
-            <h2>Phase 2: Intermediate C# and Web Development</h2>
-            <p><strong>Objective:</strong> Build on foundational knowledge by learning to use Entity Framework, Dependency Injection, and MVC for real-world application development.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><input type="checkbox" id="ef"> <label class="checkbox-label" for="ef">Entity Framework Basics (<a href="https://learn.microsoft.com/en-us/ef/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="di"> <label class="checkbox-label" for="di">Dependency Injection (<a href="https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="mvc"> <label class="checkbox-label" for="mvc">ASP.NET MVC Overview (<a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview">Learn More</a>)</label></li>
-            </ul>
-
-            <h3>Exercises</h3>
+            <h2>Creating APIs with ASP.NET Core</h2>
+            <h3>5. Minimal API</h3>
+            <p><strong>Module Goal:</strong> Create an API that responds to requests with at least 4 different endpoints. Create an endpoint that returns multiple status codes based on a condition.</p>
             <ul class="list-group">
                 <li class="list-group-item">
-                    Set up a simple database with Entity Framework to manage employee records.
-                    <a href="#" data-toggle="modal" data-target="#efModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Implement Dependency Injection in an ASP.NET Core project to manage service lifetimes.
-                    <a href="#" data-toggle="modal" data-target="#diModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Create a small MVC application to display and edit product details.
-                    <a href="#" data-toggle="modal" data-target="#mvcModal">(Detail)</a>
+                    <input type="checkbox" id="minimal-api"> 
+                    <label class="checkbox-label" for="minimal-api">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis">Microsoft: Minimal APIs overview</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/quick-reference">Microsoft: Minimal APIs quick reference</a></li>
+                            <li><a href="https://www.c-sharpcorner.com/article/restful-api-in-asp-net-core/">C# Corner: Restful API In ASP.NET</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 9.1 What is a Web API and when should you use one? - p. 235, 9.6 Generating a response from a model - p. 258</a></li>
+                        </ul>
+                    </label>
                 </li>
             </ul>
-        </div>
 
-        <!-- EF Modal -->
-        <div class="modal fade" id="efModal" tabindex="-1" aria-labelledby="efModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="efModalLabel">Steps to Set Up a Simple Database with Entity Framework</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Install Entity Framework via NuGet.</li>
-                            <li>Create a new C# class to represent the employee entity.</li>
-                            <li>Define the database context class to manage the entity.</li>
-                            <li>Configure the database connection in the `appsettings.json` file.</li>
-                            <li>Use migrations to create the database schema.</li>
-                            <li>Write code to add, update, and delete employee records.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>6. Connecting Your API to PostgreSQL using Entity Framework</h3>
+            <p><strong>Module Goal:</strong> Connect the fifth module's API to a PostgreSQL database using Entity Framework and create API endpoints to handle CRUD operations.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="ef-postgresql"> 
+                    <label class="checkbox-label" for="ef-postgresql">Resources:
+                        <ul>
+                            <li><a href="https://www.c-sharpcorner.com/article/building-a-robust-asp-net-core-web-api-with-postgresql/">C# Corner: Building a Robust ASP.NET Core Web API with PostgreSQL</a></li>
+                            <li><a href="https://aspnetboilerplate.com/Pages/Documents/EF-Core-PostgreSQL-Integration">ASP.NET Boilerplate: EF Core PostgreSQL Integration</a></li>
+                            <li><a href="https://www.syncfusion.com/succinctly-free-ebooks/asp-net-core-crud-web-api-with-dapper-and-postgresql">SyncFusion: Creating an ASP.NET Core CRUD Web API with Dapper and PostgreSQL</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 12.4 Querying data from and saving data to the database - p. 355</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- DI Modal -->
-        <div class="modal fade" id="diModal" tabindex="-1" aria-labelledby="diModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="diModalLabel">Steps to Implement Dependency Injection in ASP.NET Core</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new ASP.NET Core project.</li>
-                            <li>Define the service interface and implementation.</li>
-                            <li>Register the service in the `Startup.cs` file.</li>
-                            <li>Inject the service into controllers or other services.</li>
-                            <li>Use the injected service in your application code.</li>
-                            <li>Configure service lifetimes (transient, scoped, singleton) as needed.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>6a. Connect to PostgreSQL with ADO.NET</h3>
+            <p><strong>Module Goal:</strong> Branch the previous module's project and access the PostgreSQL database without using EF. Perform data calls directly on ADO.NET.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="ado-postgresql"> 
+                    <label class="checkbox-label" for="ado-postgresql">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview">Microsoft: ADO.NET Overview</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/answers/questions/1123214/asp-net-core-web-app-with-sql-(no-entity-framework)">Microsoft Q&A: ASP.NET Core Web App with SQL (No Entity Framework)</a></li>
+                            <li><a href="https://www.devart.com/dotconnect/postgresql/docs/">Devart: How to connect to PostgreSQL in .NET with C#</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- MVC Modal -->
-        <div class="modal fade" id="mvcModal" tabindex="-1" aria-labelledby="mvcModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="mvcModalLabel">Steps to Create a Small MVC Application</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new ASP.NET Core MVC project.</li>
-                            <li>Define the model class to represent product details.</li>
-                            <li>Create a controller to handle user requests.</li>
-                            <li>Create views to display and edit product details.</li>
-                            <li>Configure routing in the `Startup.cs` file.</li>
-                            <li>Test the application to ensure it works as expected.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+            <h3>7. Controller-Based API</h3>
+            <p><strong>Module Goal:</strong> Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="controller-api"> 
+                    <label class="checkbox-label" for="controller-api">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-5.0">Microsoft: Create web APIs with ASP.NET Core</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 9.1 Creating your first Web API Controller - p. 238, 9.2 Applying the MVC design pattern to a Web API, 9.4 Attribute routing: taking fine-grained control of your URLs - p. 246</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>8. Adding Built-In and Custom Middleware</h3>
+            <p><strong>Module Goal:</strong> Identify most common ASP.NET middleware and be able to explain what it is used for. Create your own middleware function and mount it to the application.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="middleware"> 
+                    <label class="checkbox-label" for="middleware">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware">Microsoft: ASP.NET Core Middleware</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write">Microsoft: Write custom ASP.NET Core middleware</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/request-response">Microsoft: Request and response operations in ASP.NET Core</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 3 Handling requests with the middleware pipeline</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
         </div>
 
         <div class="phase-section">
-            <h2>Phase 3: Frontend and Integration Development</h2>
-            <p><strong>Objective:</strong> Develop skills in frontend technologies and API integration to build robust and interactive web applications.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><input type="checkbox" id="html"> <label class="checkbox-label" for="html">HTML & CSS Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="js"> <label class="checkbox-label" for="js">JavaScript Basics (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="jquery"> <label class="checkbox-label" for="jquery">jQuery Overview (<a href="https://learn.jquery.com/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="rest"> <label class="checkbox-label" for="rest">REST APIs (<a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="grpc"> <label class="checkbox-label" for="grpc">gRPC Basics (<a href="https://learn.microsoft.com/en-us/aspnet/core/grpc/">Learn More</a>)</label></li>
-            </ul>
-
-            <h3>Exercises</h3>
+            <h2>The Model-View-Controller Design Pattern</h2>
+            <h3>9. ASP.NET MVC Starting Templates & Basic Routing</h3>
+            <p><strong>Module Goal:</strong> Create an MVC application that responds to GET and POST requests at multiple different routes.</p>
             <ul class="list-group">
                 <li class="list-group-item">
-                    Create a basic HTML page styled with CSS to display a user profile.
-                    <a href="#" data-toggle="modal" data-target="#htmlModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Write JavaScript to validate a user input form.
-                    <a href="#" data-toggle="modal" data-target="#jsModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Build a simple application that consumes a REST API to fetch and display data.
-                    <a href="#" data-toggle="modal" data-target="#restModal">(Detail)</a>
+                    <input type="checkbox" id="mvc-routing"> 
+                    <label class="checkbox-label" for="mvc-routing">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/?view=aspnetcore-5.0">Microsoft: ASP.NET Core MVC Tutorial</a></li>
+                            <li><a href="https://www.tutorialsteacher.com/mvc/mvc-architecture">TutorialsTeacher: MVC Architecture</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 2.8 MVC middleware and the home controller - p. 52, 4.1 An introduction to MVC - p. 95, 4.2 MVC controllers and action methods - p. 113, 5 Mapping URLs to methods using conventional routing - p. 120</a></li>
+                        </ul>
+                    </label>
                 </li>
             </ul>
-        </div>
 
-        <!-- HTML Modal -->
-        <div class="modal fade" id="htmlModal" tabindex="-1" aria-labelledby="htmlModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="htmlModalLabel">Steps to Create a Basic HTML Page</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new HTML file.</li>
-                            <li>Add the basic HTML structure (doctype, html, head, and body tags).</li>
-                            <li>Include a CSS file to style the page.</li>
-                            <li>Add HTML elements to display the user profile (e.g., div, img, h1, p).</li>
-                            <li>Apply CSS styles to the HTML elements to make the page visually appealing.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- JavaScript Modal -->
-        <div class="modal fade" id="jsModal" tabindex="-1" aria-labelledby="jsModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="jsModalLabel">Steps to Write JavaScript to Validate a User Input Form</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new HTML file with a form element.</li>
-                            <li>Add input fields for user data (e.g., name, email, password).</li>
-                            <li>Include a JavaScript file to handle form validation.</li>
-                            <li>Write JavaScript functions to validate each input field (e.g., check if the email is in the correct format).</li>
-                            <li>Attach event listeners to the form to trigger validation on form submission.</li>
-                            <li>Display error messages next to the input fields if validation fails.</li>
-                            <li>Prevent form submission if any validation checks fail.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- REST API Modal -->
-        <div class="modal fade" id="restModal" tabindex="-1" aria-labelledby="restModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="restModalLabel">Steps to Build a Simple Application that Consumes a REST API</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create a new HTML file with a basic structure.</li>
-                            <li>Include a JavaScript file to handle API requests.</li>
-                            <li>Write a function to make an HTTP GET request to the REST API using `fetch` or `XMLHttpRequest`.</li>
-                            <li>Parse the JSON response from the API.</li>
-                            <li>Display the fetched data in the HTML file (e.g., in a table or list).</li>
-                            <li>Handle any errors that may occur during the API request.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="phase-section">
-            <h2>Phase 4: Advanced Development Practices</h2>
-            <p><strong>Objective:</strong> Master advanced tools and practices such as version control, testing, containerization, and cloud deployment.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><input type="checkbox" id="git"> <label class="checkbox-label" for="git">Version Control with Git (<a href="https://git-scm.com/doc">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="tdd"> <label class="checkbox-label" for="tdd">Test-Driven Development (TDD) (<a href="https://learn.microsoft.com/en-us/dotnet/core/testing/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="docker"> <label class="checkbox-label" for="docker">Docker Fundamentals (<a href="https://docs.docker.com/get-started/">Learn More</a>)</label></li>
-                <li class="list-group-item"><input type="checkbox" id="azure"> <label class="checkbox-label" for="azure">Azure Basics (<a href="https://learn.microsoft.com/en-us/azure/">Learn More</a>)</label></li>
-            </ul>
-
-            <h3>Exercises</h3>
+            <h3>10. Binding Models to your Views in Razor Syntax</h3>
+            <p><strong>Module Goal:</strong> Create a Razor view from scratch. Create a model to attach to that view. Enable CRUD operations on the page model from scratch.</p>
             <ul class="list-group">
                 <li class="list-group-item">
-                    Use Git to clone a repository, create branches, and merge changes.
-                    <a href="#" data-toggle="modal" data-target="#gitModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Write unit tests for a small class using NUnit.
-                    <a href="#" data-toggle="modal" data-target="#tddModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Containerize a basic application with Docker and deploy it locally.
-                    <a href="#" data-toggle="modal" data-target="#dockerModal">(Detail)</a>
-                </li>
-                <li class="list-group-item">
-                    Set up a basic Azure App Service to host a web application.
-                    <a href="#" data-toggle="modal" data-target="#azureModal">(Detail)</a>
+                    <input type="checkbox" id="razor-syntax"> 
+                    <label class="checkbox-label" for="razor-syntax">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/razor">Microsoft: Razor syntax reference for ASP.NET Core</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/layout">Microsoft: Layout in ASP.NET Core</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class">Microsoft: Create reusable UI using the Razor class library project in ASP.NET Core</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 7 Rendering HTML using Razor views - p. 175</a></li>
+                        </ul>
+                    </label>
                 </li>
             </ul>
-        </div>
 
-        <!-- Git Modal -->
-        <div class="modal fade" id="gitModal" tabindex="-1" aria-labelledby="gitModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="gitModalLabel">Steps to Use Git for Version Control</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Install Git on your machine.</li>
-                            <li>Clone a repository using the `git clone` command.</li>
-                            <li>Create a new branch using the `git branch` command.</li>
-                            <li>Switch to the new branch using the `git checkout` command.</li>
-                            <li>Make changes to the code and commit them using the `git commit` command.</li>
-                            <li>Merge the changes back to the main branch using the `git merge` command.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>11. Using Tag Helpers for User Input and Other Useful Things</h3>
+            <p><strong>Module Goal:</strong> Identify and explain the most common ASP.NET tag helpers. Handle different types of user input. Create your own custom tag helper.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="tag-helpers"> 
+                    <label class="checkbox-label" for="tag-helpers">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers">Microsoft: Tag Helpers in ASP.NET Core</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in">Microsoft: ASP.NET Core built-in Tag Helpers</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 8 Building Forms with Tag Helpers, 19.4 Creating a custom Razor Tag Helper - p. 591</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- TDD Modal -->
-        <div class="modal fade" id="tddModal" tabindex="-1" aria-labelledby="tddModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="tddModalLabel">Steps to Write Unit Tests Using NUnit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Install the NUnit framework and NUnit3TestAdapter via NuGet.</li>
-                            <li>Create a new test project in your solution.</li>
-                            <li>Write test methods using the `[Test]` attribute.</li>
-                            <li>Use assertions to verify the expected outcomes.</li>
-                            <li>Run the tests using the Test Explorer in Visual Studio.</li>
-                            <li>Refactor the code and ensure all tests pass.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>12. Using DataAnnotations to Validate Your Models</h3>
+            <p><strong>Module Goal:</strong> Identify and explain the most common ASP.NET DataAnnotations. Add validation to your model.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="data-annotations"> 
+                    <label class="checkbox-label" for="data-annotations">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations?view=net-5.0">Microsoft: System.ComponentModel.DataAnnotations Namespace</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 6.3 Handling user input with model validation</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- Docker Modal -->
-        <div class="modal fade" id="dockerModal" tabindex="-1" aria-labelledby="dockerModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="dockerModalLabel">Steps to Containerize an Application with Docker</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Install Docker on your machine.</li>
-                            <li>Create a Dockerfile in the root of your project.</li>
-                            <li>Define the base image and dependencies in the Dockerfile.</li>
-                            <li>Build the Docker image using the `docker build` command.</li>
-                            <li>Run a container from the image using the `docker run` command.</li>
-                            <li>Verify that the application is running inside the container.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <h3>13. Styling your view models</h3>
+            <p><strong>Module Goal:</strong> Describe common approaches to styling Views in ASP.NET Core. Implement CSS styles and connect the application to Bootstrap. Create a layout and edit its styles.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="styling"> 
+                    <label class="checkbox-label" for="styling">Resources:
+                        <ul>
+                            <li><a href="https://www.syncfusion.com/succinctly-free-ebooks/asp-net-core-succinctly">Syncfusion: ASP.NET Core Succinctly</a></li>
+                            <li><a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Bootstrap: Get started with Bootstrap</a></li>
+                            <li><a href="https://www.bootstrapdash.com/blog/asp-net-core-bootstrap/">Bootstrapdash: How to Use ASP.NET with Core Bootstrap</a></li>
+                            <li><a href="https://www.infragistics.com/community/blogs/b/infragistics/posts/styling-your-application">Infragistics: Styling Your Application</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
 
-        <!-- Azure Modal -->
-        <div class="modal fade" id="azureModal" tabindex="-1" aria-labelledby="azureModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="azureModalLabel">Steps to Set Up a Basic Azure App Service</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Create an Azure account if you don't have one.</li>
-                            <li>Navigate to the Azure portal and create a new App Service.</li>
-                            <li>Configure the App Service settings (e.g., resource group, app name, runtime stack).</li>
-                            <li>Deploy your application to the App Service using the deployment method of your choice (e.g., Git, FTP, Visual Studio).</li>
-                            <li>Verify that the application is running on the Azure App Service.</li>
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+                        <h3>14. ASP.NET Core Identity, and Adding Authentication & Authorization</h3>
+            <p><strong>Module Goal:</strong> Using ASP.NET Core Identity, add authentication to your application. Describe the common authorization methods used by ASP.NET Core, choose one to implement into your MVC application.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="identity-authentication"> 
+                    <label class="checkbox-label" for="identity-authentication">Resources:
+                        <ul>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 14.1 Introducing authentication and authorization - p. 402, 14.2 What is ASP.NET Core Identity - p. 412, 14.4 Adding ASP.NET Core Identity to an existing project - p. 423, 14.5 Managing users: adding new claims to users - p. 428, 15 Authorization: securing your application - p. 432</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>15. Add unit tests for your action methods using NUnit</h3>
+            <p><strong>Module Goal:</strong> Add tests to a controller of your ASP.NET application. Create tests that increase the confidence of the application working. Understand the basic syntax of NUnit as it relates to the form of a unit test.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="unit-tests"> 
+                    <label class="checkbox-label" for="unit-tests">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit">Microsoft: Unit testing C# with NUnit and .NET Core</a></li>
+                            <li><a href="https://www.c-sharpcorner.com/UploadFile/4d42da/introduction-to-nunit-testing-framework/">C# Corner: Introduction to NUnit Testing Framework</a></li>
+                            <li><a href="https://testrigor.com/blog/asp-net-testing/">testRigor: ASP.NET Testing</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 20.4 Unit testing MVC controllers</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>16. Publish your application with IIS Express</h3>
+            <p><strong>Module Goal:</strong> Describe the use of IIS Express and the term "publish". Explain the hosting model of ASP.NET Core. Publish your MVC application to IIS Express.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="publish-iis"> 
+                    <label class="checkbox-label" for="publish-iis">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-5.0">Microsoft: Publish an ASP.NET Core app to IIS</a></li>
+                            <li><a href="https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot">Microsoft: Native AOT Deployment</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 16.1 Understanding the ASP.NET Core hosting model - p. 463, 16.2 Publishing your app to IIS - p. 470</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>16a. Deploy your application to Linux with Nginx</h3>
+            <p><strong>Module Goal:</strong> Provision an EC2 instance of Ubuntu. Configure Nginx to serve the application on a domain and point a DNS provider to the address. Bonus points for setting up CI/CD with Github Actions.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="deploy-linux"> 
+                    <label class="checkbox-label" for="deploy-linux">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx">Microsoft: Host ASP.NET Core on Linux with Nginx</a></li>
+                            <li><a href="https://nginx.org/en/docs/beginners_guide.html">nginx: Beginner's Guide</a></li>
+                            <li><a href="https://nginx.org/en/docs/">nginx: Docs</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 16.3 Hosting an application on Linux</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
+
+            <h3>17. Configure Logging to Monitor your application</h3>
+            <p><strong>Module Goal:</strong> Add searchable and useful logging to the application using Microsoft-provided logging to monitor the application.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input type="checkbox" id="logging"> 
+                    <label class="checkbox-label" for="logging">Resources:
+                        <ul>
+                            <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging">Microsoft: Logging in .NET Core and ASP.NET Core</a></li>
+                            <li><a href="https://dev.to/azure/asp-net-core-logging-with-azure-4big">Dev.to: Logging in ASP.NET</a></li>
+                            <li><a href="#">Andrew Lock - ASP.NET Core in Action, 17.1 Using logging effectively in a production app - p. 503, 17.2 Adding log messages to your application - p. 507, 17.5 Structured logging: creating searchable, useful logs</a></li>
+                        </ul>
+                    </label>
+                </li>
+            </ul>
         </div>
 
         <h2>Tracking Progress</h2>
