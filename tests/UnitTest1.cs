@@ -4,6 +4,8 @@ using System.IO;
 using NUnit.Framework;
 using System.Threading.Tasks;
 
+namespace PlaywrightTests;
+[Parallelizable(ParallelScope.Self)]
 [TestFixture]
 public class PlaywrightTests : PageTest
 {
