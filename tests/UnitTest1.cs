@@ -17,10 +17,10 @@ public class PlaywrightTests : PageTest
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
         
-        // Check for main phase headings
-        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Introduction to ASP.NET" })).ToBeVisibleAsync();
-        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Creating APIs with ASP.NET Core" })).ToBeVisibleAsync();
-        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "The Model-View-Controller Design Pattern" })).ToBeVisibleAsync();
+        // Check for main phase headings using a more specific selector
+        await Expect(Page.Locator(".phase-section h2").First).ToContainTextAsync("Introduction to ASP.NET");
+        await Expect(Page.Locator(".phase-section h2").Nth(1)).ToContainTextAsync("Creating APIs with ASP.NET Core");
+        await Expect(Page.Locator(".phase-section h2").Nth(2)).ToContainTextAsync("The Model-View-Controller Design Pattern");
     }
 
     [Test]
