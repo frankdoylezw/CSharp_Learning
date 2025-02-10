@@ -1,7 +1,6 @@
-// tests/playwright.config.ts
-import { defineConfig } from '@playwright/test';
+const { defineConfig } = require('@playwright/test');
 
-export default defineConfig({
+module.exports = defineConfig({
   reporter: [['html', { outputFolder: 'playwright-report' }]],
   use: {
     trace: 'on-first-retry',
