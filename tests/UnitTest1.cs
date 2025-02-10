@@ -8,15 +8,28 @@ using System.Threading.Tasks;
 public class PlaywrightTests : PageTest
 {
     [SetUp]
-    public void SetUp()
+    public async Task Setup()
     {
-        // Clear the screenshots directory
-        var screenshotsDir = "screenshots";
-        if (Directory.Exists(screenshotsDir))
+        await Context.Tracing.StartAsync(new()
         {
-            Directory.Delete(screenshotsDir, true);
-        }
-        Directory.CreateDirectory(screenshotsDir);
+            Title = $"{TestContext.CurrentContext.Test.ClassName}.{TestContext.CurrentContext.Test.Name}",
+            Screenshots = true,
+            Snapshots = true,
+            Sources = true
+        });
+    }
+
+    [TearDown]
+    public async Task TearDown()
+    {
+        await Context.Tracing.StopAsync(new()
+        {
+            Path = Path.Combine(
+                TestContext.CurrentContext.WorkDirectory,
+                "playwright-traces",
+                $"{TestContext.CurrentContext.Test.ClassName}.{TestContext.CurrentContext.Test.Name}.zip"
+            )
+        });
     }
 
     [Test]
