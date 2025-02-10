@@ -64,3 +64,4 @@ jobs:
       with:
         name: playwright-artifacts
         path: tests/bin/Debug/net8.0/playwright-report/
+        retention-days: 1  # Delete artifacts after 7 days
