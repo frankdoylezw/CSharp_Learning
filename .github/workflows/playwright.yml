@@ -60,7 +60,7 @@ jobs:
 
     - name: Upload Playwright Artifacts (Screenshots, Videos, Traces)
       if: always() # Upload even if tests pass or fail
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: playwright-artifacts
         path: tests/bin/Debug/net8.0/playwright-report/
