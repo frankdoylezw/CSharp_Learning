@@ -56,12 +56,12 @@ jobs:
 
     - name: Run Playwright Tests (Headless with Tracing)
       working-directory: tests
-      run: PLAYWRIGHT_HEADLESS=1 dotnet test
+      run: PLAYWRIGHT_HEADLESS=1 dotnet test --logger "trx;LogFileName=TestResults.trx"
 
     - name: Upload Playwright Artifacts (Screenshots, Videos, Traces)
       if: always() # Upload even if tests pass or fail
       uses: actions/upload-artifact@v4
       with:
         name: playwright-artifacts
-        path: tests/bin/Debug/net8.0/playwright-report/
-        retention-days: 1  # Delete artifacts after 7 days
+        path: playwright-report/
+        retention-days: 1
