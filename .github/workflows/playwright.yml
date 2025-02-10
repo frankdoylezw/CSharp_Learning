@@ -64,5 +64,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-traces
-        path: bin/Debug/net8.0/playwright-traces/*.zip
+        path: tests/playwright-traces/*.zip
         retention-days: 1
