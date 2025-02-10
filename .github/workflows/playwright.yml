@@ -41,11 +41,11 @@ jobs:
       working-directory: tests
       run: dotnet build --configuration Release --no-restore
 
-    - name: Install Playwright Browsers
+    - name: Install Playwright Browsers (Only Chromium)
       working-directory: tests
       run: |
         dotnet build
-        pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+        pwsh bin/Debug/net8.0/playwright.ps1 install chromium
 
     - name: Start Xvfb (Virtual Display for UI Tests)
       run: |
