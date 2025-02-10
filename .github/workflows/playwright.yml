@@ -14,17 +14,22 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
+    - name: Setup PowerShell
+      uses: actions/setup-powershell@v2
       with:
-        node-version: '14'
+        powershell-version: '7.0'
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
     - name: Install Playwright CLI
       run: dotnet tool install --global Microsoft.Playwright.CLI
@@ -43,7 +48,7 @@ jobs:
 
     - name: Install Playwright Browsers
       working-directory: tests
-      run: playwright install
+      run: pwsh bin/Release/net8.0/playwright.ps1 install
 
     - name: Run Playwright Tests
       working-directory: tests
