@@ -45,8 +45,22 @@ jobs:
       working-directory: tests
       run: |
         dotnet build
-        pwsh bin/Debug/net8.0/playwright.ps1 install
+        pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
 
-    - name: Run Playwright Tests
+    - name: Start Xvfb (Virtual Display for UI Tests)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        Xvfb :99 -ac &
+        echo "DISPLAY=:99" >> $GITHUB_ENV
+
+    - name: Run Playwright Tests (Headless with Tracing)
       working-directory: tests
-      run: dotnet test
+      run: PLAYWRIGHT_HEADLESS=1 dotnet test
+
+    - name: Upload Playwright Artifacts (Screenshots, Videos, Traces)
+      if: always() # Upload even if tests pass or fail
+      uses: actions/upload-artifact@v3
+      with:
+        name: playwright-artifacts
+        path: tests/bin/Debug/net8.0/playwright-report/
