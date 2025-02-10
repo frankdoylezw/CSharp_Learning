@@ -21,11 +21,6 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
-    - name: Setup PowerShell
-      uses: actions/setup-powershell@v2
-      with:
-        powershell-version: '7.0'
-
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
@@ -48,7 +43,9 @@ jobs:
 
     - name: Install Playwright Browsers
       working-directory: tests
-      run: pwsh bin/Release/net8.0/playwright.ps1 install
+      run: |
+        dotnet build
+        pwsh bin/Debug/net8.0/playwright.ps1 install
 
     - name: Run Playwright Tests
       working-directory: tests
