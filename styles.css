@@ -156,6 +156,33 @@ body {
     transform: translateY(0);
 }
 
+/* Section Completed and Exercise */
+.section-completed, .section-exercise {
+    border: 1px solid #444;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.section-completed label, .section-exercise label {
+    margin: 0;
+}
+
+.section-completed input[type="checkbox"], .section-exercise input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.section-completed label::before {
+    content: " ";
+}
+
+.section-exercise ul {
+    margin-top: 10px; /* Added space between "Exercise:" and questions */
+}
+
 
 
 
