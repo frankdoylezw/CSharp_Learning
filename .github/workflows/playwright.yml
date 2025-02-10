@@ -54,6 +54,9 @@ jobs:
         Xvfb :99 -ac &
         echo "DISPLAY=:99" >> $GITHUB_ENV
 
+    - name: Ensure playwright-report directory exists
+      run: mkdir -p tests/playwright-report
+    
     - name: Run Playwright Tests (Headless with Tracing)
       working-directory: tests
       run: PLAYWRIGHT_HEADLESS=1 dotnet test --logger "trx;LogFileName=TestResults.trx"
