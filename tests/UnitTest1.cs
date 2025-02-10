@@ -27,11 +27,11 @@ public class PlaywrightTests : PageTest
     public async Task CheckResourceLinksWork()
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        
+    
         // Check specific resource link exists and is clickable
-        var dotnetCliLink = Page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: .NET CLI overview" });
+        var dotnetCliLink = Page.Locator(".resource-label a", new() { HasText = "Microsoft: .NET CLI overview" });
         await Expect(dotnetCliLink).ToBeVisibleAsync();
-        
+    
         // Verify the href attribute
         var href = await dotnetCliLink.GetAttributeAsync("href");
         Assert.That(href, Is.EqualTo("https://learn.microsoft.com/en-us/dotnet/core/tools/"));
