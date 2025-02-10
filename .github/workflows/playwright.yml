@@ -58,3 +58,11 @@ jobs:
         name: test-results
         path: tests/TestResults/TestResults.trx
         retention-days: 1
+
+    - name: Upload Playwright Traces
+      if: always() # Upload even if tests pass or fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-traces
+        path: tests/playwright-traces/
+        retention-days: 1
