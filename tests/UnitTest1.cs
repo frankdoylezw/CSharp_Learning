@@ -61,24 +61,24 @@ public class PlaywrightTests : PageTest
     }
 
     [Test]
-    public async Task CheckboxFunctionality()
+public async Task CheckboxFunctionality()
     {
         try
         {
             await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-            
-            // Get the first checkbox (dotnet-cli)
-            var checkbox = Page.Locator("#dotnet-cli");
-            
+        
+            // Get the first checkbox (section1-completed)
+            var checkbox = Page.Locator("#section1-completed");
+        
             // Verify it exists and is initially unchecked
             await Expect(checkbox).ToBeVisibleAsync();
             Assert.That(await checkbox.IsCheckedAsync(), Is.False);
-            
+        
             // Check it and verify the state changes
             await checkbox.CheckAsync();
             Assert.That(await checkbox.IsCheckedAsync(), Is.True);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckboxFunctionality.png" });
             throw;
