@@ -129,4 +129,32 @@ public class PlaywrightTests : PageTest
             throw;
         }
     }
+
+    [Test]
+    public async Task LongerTest()
+    {
+        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await Expect(Page.Locator("body")).ToContainTextAsync("This structured learning plan is designed to help you develop essential skills in ASP.NET Core and web application development. Each phase builds upon the previous one, with clear objectives and resources to guide your learning.");
+        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Creating APIs with ASP.NET" })).ToBeVisibleAsync();
+        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Controller-Based API" })).ToBeVisibleAsync();
+        await Expect(Page.Locator("body")).ToContainTextAsync("Module Goal: Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.");
+        await Expect(Page.GetByRole(AriaRole.Button, new() { Name = "Back to Top" })).ToBeVisibleAsync();
+        await Expect(Page.Locator("body")).ToContainTextAsync("This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!");
+        await Page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Logging in .NET" }).ClickAsync();
+        await Expect(Page.Locator("#logging-in-net-core-and-aspnet-core")).ToContainTextAsync("Logging in .NET Core and ASP.NET Core");
+        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await Expect(Page.Locator("body")).ToContainTextAsync("Exercise: What command would you use to create a new .NET console application using the .NET CLI? How do you list all available templates in the .NET CLI? Which command is used to build a .NET project? Describe the command to run a .NET application. How can you add a NuGet package to a .NET project using the CLI?");
+        await Page.GetByText("Describe the command to run a").ClickAsync();
+        await Page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Minimal APIs overview" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Link, new() { Name = "Kestrel endpoint configuration" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Link, new() { Name = "C# Corner: Restful API In ASP" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Button, new() { Name = "Continue with Recommended" }).ClickAsync();
+        await Page.GetByText("ASP.NET", new() { Exact = true }).ClickAsync();
+        await Page.GetByText("ASP.NET is a free web").ClickAsync();
+        await Expect(Page.Locator("#ctl00_MainContent_DivDescription")).ToContainTextAsync("ASP.NET is a free web framework for building Web sites and Web applications using HTML, CSS and JavaScript. Create Web APIs, mobile sites and use real-time technologies.");
+        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await Page.GetByRole(AriaRole.Heading, new() { Name = "dotnet cli" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" }).CheckAsync();
+        await Expect(Page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" })).ToBeCheckedAsync();
+    }
 }
