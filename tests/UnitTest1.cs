@@ -46,7 +46,7 @@ public class PlaywrightTests : PageTest
     public async Task CheckPhaseHeadingsExist()
     {
         await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        
+
         // Check for main phase headings using a more specific selector
         await Expect(Page.Locator(".phase-section h2").First).ToContainTextAsync("Introduction to ASP.NET");
         await Expect(Page.Locator(".phase-section h2").Nth(1)).ToContainTextAsync("Creating APIs with ASP.NET Core");
@@ -59,16 +59,16 @@ public class PlaywrightTests : PageTest
         try
         {
             await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-            
+
             // Check specific resource link exists and is clickable
             var dotnetCliLink = Page.Locator(".resource-label a", new() { HasText = "Microsoft: .NET CLI overview" });
             await Expect(dotnetCliLink).ToBeVisibleAsync();
-            
+
             // Verify the href attribute
             var href = await dotnetCliLink.GetAttributeAsync("href");
             Assert.That(href, Is.EqualTo("https://learn.microsoft.com/en-us/dotnet/core/tools/"));
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckResourceLinksWork.png" });
             throw;
