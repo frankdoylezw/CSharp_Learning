@@ -37,7 +37,7 @@ public class PlaywrightTests : PageTest
     [Test]
     public async Task HomepageLoadsCorrectly()
     {
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning01/");
+        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
         var title = await Page.TitleAsync();
         Assert.That(title, Does.Contain("Structured Learning Plan for Web Application Development"));
     }
