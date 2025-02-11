@@ -9,6 +9,7 @@ namespace PlaywrightTests;
 [TestFixture]
 public class PlaywrightTests : PageTest
 {
+    private IBrowser _browser;
     private IBrowserContext _context;
     private IPage _page;
 
@@ -23,8 +24,17 @@ public class PlaywrightTests : PageTest
             Sources = true
         });
 
+        // Determine if the browser should be headless based on the PWDEBUG environment variable
+        bool headless = Environment.GetEnvironmentVariable("PWDEBUG") != "1";
+
+        // Launch the browser with the headless option
+        _browser = await Playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+        {
+            Headless = headless
+        });
+
         // Create a new browser context with video recording options
-        _context = await Browser.NewContextAsync(new BrowserNewContextOptions
+        _context = await _browser.NewContextAsync(new BrowserNewContextOptions
         {
             RecordVideoDir = Path.Combine(TestContext.CurrentContext.WorkDirectory, "videos"),
             RecordVideoSize = new() { Width = 1280, Height = 720 }
@@ -59,6 +69,9 @@ public class PlaywrightTests : PageTest
                 TestContext.AddTestAttachment(videoFile);
             }
         }
+
+        // Close the browser
+        await _browser.CloseAsync();
     }
 
     [Test]
@@ -133,27 +146,28 @@ public class PlaywrightTests : PageTest
     [Test]
     public async Task LongerTest()
     {
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        await Expect(Page.Locator("body")).ToContainTextAsync("This structured learning plan is designed to help you develop essential skills in ASP.NET Core and web application development. Each phase builds upon the previous one, with clear objectives and resources to guide your learning.");
-        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Creating APIs with ASP.NET" })).ToBeVisibleAsync();
-        await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Controller-Based API" })).ToBeVisibleAsync();
-        await Expect(Page.Locator("body")).ToContainTextAsync("Module Goal: Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.");
-        await Expect(Page.Locator("body")).ToContainTextAsync("This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!");
-        await Page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Logging in .NET" }).ClickAsync();
-        await Expect(Page.Locator("#logging-in-net-core-and-aspnet-core")).ToContainTextAsync("Logging in .NET Core and ASP.NET Core");
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        await Expect(Page.Locator("body")).ToContainTextAsync("Exercise: What command would you use to create a new .NET console application using the .NET CLI? How do you list all available templates in the .NET CLI? Which command is used to build a .NET project? Describe the command to run a .NET application. How can you add a NuGet package to a .NET project using the CLI?");
-        await Page.GetByText("Describe the command to run a").ClickAsync();
-        await Page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Minimal APIs overview" }).ClickAsync();
-        await Page.GetByRole(AriaRole.Link, new() { Name = "Kestrel endpoint configuration" }).ClickAsync();
-        await Page.GetByRole(AriaRole.Link, new() { Name = "C# Corner: Restful API In ASP" }).ClickAsync();
-        await Page.GetByRole(AriaRole.Button, new() { Name = "Continue with Recommended" }).ClickAsync();
-        await Page.GetByText("ASP.NET", new() { Exact = true }).ClickAsync();
-        await Page.GetByText("ASP.NET is a free web").ClickAsync();
-        await Expect(Page.Locator("#ctl00_MainContent_DivDescription")).ToContainTextAsync("ASP.NET is a free web framework for building Web sites and Web applications using HTML, CSS and JavaScript. Create Web APIs, mobile sites and use real-time technologies.");
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        await Page.GetByRole(AriaRole.Heading, new() { Name = "dotnet cli" }).ClickAsync();
-        await Page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" }).CheckAsync();
-        await Expect(Page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" })).ToBeCheckedAsync();
+        await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await Expect(_page.Locator("body")).ToContainTextAsync("This structured learning plan is designed to help you develop essential skills in ASP.NET Core and web application development. Each phase builds upon the previous one, with clear objectives and resources to guide your learning.");
+        await Expect(_page.GetByRole(AriaRole.Heading, new() { Name = "Creating APIs with ASP.NET" })).ToBeVisibleAsync();
+        await Expect(_page.GetByRole(AriaRole.Heading, new() { Name = "Controller-Based API" })).ToBeVisibleAsync();
+        await Expect(_page.Locator("body")).ToContainTextAsync("Module Goal: Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.");
+        await Expect(_page.GetByRole(AriaRole.Button, new() { Name = "Back to Top" })).ToBeVisibleAsync();
+        await Expect(_page.Locator("body")).ToContainTextAsync("This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!");
+        await _page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Logging in .NET" }).ClickAsync();
+        await Expect(_page.Locator("#logging-in-net-core-and-aspnet-core")).ToContainTextAsync("Logging in .NET Core and ASP.NET Core");
+        await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await Expect(_page.Locator("body")).ToContainTextAsync("Exercise: What command would you use to create a new .NET console application using the .NET CLI? How do you list all available templates in the .NET CLI? Which command is used to build a .NET project? Describe the command to run a .NET application. How can you add a NuGet package to a .NET project using the CLI?");
+        await _page.GetByText("Describe the command to run a").ClickAsync();
+        await _page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Minimal APIs overview" }).ClickAsync();
+        await _page.GetByRole(AriaRole.Link, new() { Name = "Kestrel endpoint configuration" }).ClickAsync();
+        await _page.GetByRole(AriaRole.Link, new() { Name = "C# Corner: Restful API In ASP" }).ClickAsync();
+        await _page.GetByRole(AriaRole.Button, new() { Name = "Continue with Recommended" }).ClickAsync();
+        await _page.GetByText("ASP.NET", new() { Exact = true }).ClickAsync();
+        await _page.GetByText("ASP.NET is a free web").ClickAsync();
+        await Expect(_page.Locator("#ctl00_MainContent_DivDescription")).ToContainTextAsync("ASP.NET is a free web framework for building Web sites and Web applications using HTML, CSS and JavaScript. Create Web APIs, mobile sites and use real-time technologies.");
+        await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await _page.GetByRole(AriaRole.Heading, new() { Name = "dotnet cli" }).ClickAsync();
+        await _page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" }).CheckAsync();
+        await Expect(_page.GetByRole(AriaRole.Checkbox, new() { Name = "Section 1 completed" })).ToBeCheckedAsync();
     }
 }
