@@ -7,3 +7,5 @@
 /.vs/CSharpLearning/v17
 /.vs/slnx.sqlite
 /.vs/VSWorkspaceState.json
+bin/
+obj/
