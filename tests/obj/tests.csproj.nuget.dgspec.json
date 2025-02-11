@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Source\\Repos\\CSharpLearning\\tests\\tests.csproj": {}
+    "C:\\source\\repos\\CSharpLearning\\tests\\tests.csproj": {}
   },
   "projects": {
-    "C:\\Source\\Repos\\CSharpLearning\\tests\\tests.csproj": {
+    "C:\\source\\repos\\CSharpLearning\\tests\\tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Source\\Repos\\CSharpLearning\\tests\\tests.csproj",
+        "projectUniqueName": "C:\\source\\repos\\CSharpLearning\\tests\\tests.csproj",
         "projectName": "tests",
-        "projectPath": "C:\\Source\\Repos\\CSharpLearning\\tests\\tests.csproj",
+        "projectPath": "C:\\source\\repos\\CSharpLearning\\tests\\tests.csproj",
         "packagesPath": "C:\\Users\\Frank.Doyle\\.nuget\\packages\\",
-        "outputPath": "C:\\Source\\Repos\\CSharpLearning\\tests\\obj\\",
+        "outputPath": "C:\\source\\repos\\CSharpLearning\\tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

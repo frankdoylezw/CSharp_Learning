@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VwGpqt9tNLY=",
+  "dgSpecHash": "V64JxQPmDIc=",
   "success": true,
-  "projectFilePath": "C:\\Source\\Repos\\CSharpLearning\\tests\\tests.csproj",
+  "projectFilePath": "C:\\source\\repos\\CSharpLearning\\tests\\tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Frank.Doyle\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\Frank.Doyle\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
