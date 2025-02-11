@@ -9,6 +9,9 @@ namespace PlaywrightTests;
 [TestFixture]
 public class PlaywrightTests : PageTest
 {
+    private IBrowserContext _context;
+    private IPage _page;
+
     [SetUp]
     public async Task Setup()
     {
@@ -20,12 +23,15 @@ public class PlaywrightTests : PageTest
             Sources = true
         });
 
-        // Start video recording
-        await Context.NewPageAsync(new BrowserNewPageOptions
+        // Create a new browser context with video recording options
+        _context = await Browser.NewContextAsync(new BrowserNewContextOptions
         {
             RecordVideoDir = Path.Combine(TestContext.CurrentContext.WorkDirectory, "videos"),
             RecordVideoSize = new() { Width = 1280, Height = 720 }
         });
+
+        // Create a new page within the context
+        _page = await _context.NewPageAsync();
     }
 
     [TearDown]
@@ -40,7 +46,10 @@ public class PlaywrightTests : PageTest
             )
         });
 
-        // Stop video recording
+        // Close the context to stop video recording
+        await _context.CloseAsync();
+
+        // Add video files as test attachments
         var videoPath = Path.Combine(TestContext.CurrentContext.WorkDirectory, "videos");
         if (Directory.Exists(videoPath))
         {
@@ -55,20 +64,20 @@ public class PlaywrightTests : PageTest
     [Test]
     public async Task HomepageLoadsCorrectly()
     {
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
-        var title = await Page.TitleAsync();
+        await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        var title = await _page.TitleAsync();
         Assert.That(title, Does.Contain("Structured Learning Plan for Web Application Development"));
     }
 
     [Test]
     public async Task CheckPhaseHeadingsExist()
     {
-        await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+        await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
 
         // Check for main phase headings using a more specific selector
-        await Expect(Page.Locator(".phase-section h2").First).ToContainTextAsync("Introduction to ASP.NET");
-        await Expect(Page.Locator(".phase-section h2").Nth(1)).ToContainTextAsync("Creating APIs with ASP.NET Core");
-        await Expect(Page.Locator(".phase-section h2").Nth(2)).ToContainTextAsync("The Model-View-Controller Design Pattern");
+        await Expect(_page.Locator(".phase-section h2").First).ToContainTextAsync("Introduction to ASP.NET");
+        await Expect(_page.Locator(".phase-section h2").Nth(1)).ToContainTextAsync("Creating APIs with ASP.NET Core");
+        await Expect(_page.Locator(".phase-section h2").Nth(2)).ToContainTextAsync("The Model-View-Controller Design Pattern");
     }
 
     [Test]
@@ -76,10 +85,10 @@ public class PlaywrightTests : PageTest
     {
         try
         {
-            await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+            await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
 
             // Check specific resource link exists and is clickable
-            var dotnetCliLink = Page.Locator(".resource-label a", new() { HasText = "Microsoft: .NET CLI overview" });
+            var dotnetCliLink = _page.Locator(".resource-label a", new() { HasText = "Microsoft: .NET CLI overview" });
             await Expect(dotnetCliLink).ToBeVisibleAsync();
 
             // Verify the href attribute
@@ -88,7 +97,7 @@ public class PlaywrightTests : PageTest
         }
         catch (Exception)
         {
-            await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckResourceLinksWork.png" });
+            await _page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckResourceLinksWork.png" });
             throw;
         }
     }
@@ -98,10 +107,10 @@ public class PlaywrightTests : PageTest
     {
         try
         {
-            await Page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
+            await _page.GotoAsync("https://frankdoylezw.github.io/CSharp_Learning/");
 
             // Get the first checkbox (section1-completed)
-            var checkbox = Page.Locator("#section1-completed");
+            var checkbox = _page.Locator("#section1-completed");
 
             // Verify it exists
             await Expect(checkbox).ToBeVisibleAsync();
@@ -116,7 +125,7 @@ public class PlaywrightTests : PageTest
         }
         catch (Exception)
         {
-            await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckboxFunctionality.png" });
+            await _page.ScreenshotAsync(new PageScreenshotOptions { Path = "screenshots/CheckboxFunctionality.png" });
             throw;
         }
     }
