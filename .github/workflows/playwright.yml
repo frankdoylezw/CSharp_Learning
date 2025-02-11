@@ -56,7 +56,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test-results
-        path: tests/TestResults/TestResults.trx
+        path: tests/bin/Debug/net8.0/playwright/TestResults.trx
         retention-days: 1
 
     - name: Upload Playwright Traces
@@ -64,5 +64,13 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-traces
-        path: tests/playwright-traces/*.zip
+        path: tests/bin/Debug/net8.0/playwright/playwright-traces/*.zip
+        retention-days: 1
+    
+    - name: Upload Playwright Videos
+      if: always() # Upload even if tests pass or fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-videos
+        path: tests/bin/Debug/net8.0/playwright/playwright-videos/*.webm
         retention-days: 1
