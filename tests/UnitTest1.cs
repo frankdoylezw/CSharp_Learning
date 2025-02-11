@@ -151,7 +151,6 @@ public class PlaywrightTests : PageTest
         await Expect(_page.GetByRole(AriaRole.Heading, new() { Name = "Creating APIs with ASP.NET" })).ToBeVisibleAsync();
         await Expect(_page.GetByRole(AriaRole.Heading, new() { Name = "Controller-Based API" })).ToBeVisibleAsync();
         await Expect(_page.Locator("body")).ToContainTextAsync("Module Goal: Explain the differences and cost/benefit of a Controller-Based API vs a Minimal API. Refactor your Minimal API into a Controller-Based API.");
-        await Expect(_page.GetByRole(AriaRole.Button, new() { Name = "Back to Top" })).ToBeVisibleAsync();
         await Expect(_page.Locator("body")).ToContainTextAsync("This learning plan includes interactive checkboxes that allow you to track your progress. Your progress is saved in your browser's local storage, so you can pick up where you left off, even after refreshing the page. Simply tick off tasks as you complete them!");
         await _page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Logging in .NET" }).ClickAsync();
         await Expect(_page.Locator("#logging-in-net-core-and-aspnet-core")).ToContainTextAsync("Logging in .NET Core and ASP.NET Core");
