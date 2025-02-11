@@ -19,6 +19,13 @@ public class PlaywrightTests : PageTest
             Snapshots = true,
             Sources = true
         });
+
+        // Start video recording
+        await Context.NewPageAsync(new BrowserNewPageOptions
+        {
+            RecordVideoDir = Path.Combine(TestContext.CurrentContext.WorkDirectory, "videos"),
+            RecordVideoSize = new() { Width = 1280, Height = 720 }
+        });
     }
 
     [TearDown]
@@ -32,6 +39,17 @@ public class PlaywrightTests : PageTest
                 $"{TestContext.CurrentContext.Test.ClassName}.{TestContext.CurrentContext.Test.Name}.zip"
             )
         });
+
+        // Stop video recording
+        var videoPath = Path.Combine(TestContext.CurrentContext.WorkDirectory, "videos");
+        if (Directory.Exists(videoPath))
+        {
+            var videoFiles = Directory.GetFiles(videoPath, "*.webm");
+            foreach (var videoFile in videoFiles)
+            {
+                TestContext.AddTestAttachment(videoFile);
+            }
+        }
     }
 
     [Test]
