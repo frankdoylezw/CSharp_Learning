@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Threading.Tasks;
 
 namespace PlaywrightTests;
-[Parallelizable(ParallelScope.Self)]
+//[Parallelizable(ParallelScope.Self)]
 [TestFixture]
 public class PlaywrightTests : PageTest
 {
