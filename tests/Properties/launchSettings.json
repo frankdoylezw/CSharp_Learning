@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "tests": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Project"
+    },
+    "NewProfile": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
