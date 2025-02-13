@@ -28,6 +28,46 @@
     margin-top: 10px;
 }
 
+/* Sidebar styles */
+#sidebar-wrapper {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#sidebar-wrapper .list-group {
+    width: 100%;
+}
+
+#page-content-wrapper {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    #page-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -182,13 +222,3 @@ body {
 .section-exercise ul {
     margin-top: 10px; /* Added space between "Exercise:" and questions */
 }
-
-
-
-
-
-
-
-
-
-

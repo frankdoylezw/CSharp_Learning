@@ -8,20 +8,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const progressBar = document.getElementById('progress-bar');
     const backToTopButton = document.getElementById('backToTop');
+    const sidebarToggle = document.getElementById('menu-toggle');
+    const sidebarWrapper = document.getElementById('sidebar-wrapper');
 
-    //// Smooth scrolling for anchor links
-    //document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //    anchor.addEventListener('click', function (e) {
-    //        e.preventDefault();
-    //        const targetId = this.getAttribute('href').substring(1);
-    //        const targetElement = document.getElementById(targetId);
-    //        if (targetElement) {
-    //            targetElement.scrollIntoView({
-    //                behavior: 'smooth'
-    //            });
-    //        }
-    //    });
-    //});
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
     // Scroll animations
     const observer = new IntersectionObserver(entries => {
@@ -50,6 +52,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else {
             backToTopButton.style.display = 'none';
         }
+    });
+
+    // Sidebar toggle functionality
+    sidebarToggle.addEventListener('click', function () {
+        sidebarWrapper.classList.toggle('toggled');
     });
 
     // Load checkbox states from the server
