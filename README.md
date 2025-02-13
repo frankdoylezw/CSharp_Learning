@@ -55,6 +55,10 @@ dotnet run
 
 The progress checker is an interactive tool that allows you to track your progress through the learning plan. Simply check off tasks as you complete them, and your progress will be saved.
 
+### Interactive Coding Challenges
+
+The exercises section now includes interactive coding challenges using platforms like CodeSignal or HackerRank. These challenges provide instant feedback on your code submissions and include hints and solutions to help you learn from your mistakes.
+
 ## Contributing
 
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:
