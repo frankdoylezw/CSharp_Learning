@@ -54,7 +54,7 @@ jobs:
 
     - name: Run Playwright Tests (Headless with Tracing)
       working-directory: tests
-      run: PLAYWRIGHT_HEADLESS=1 dotnet test --logger "trx;LogFileName=TestResults.trx"
+      run: PLAYWRIGHT_HEADLESS=1 dotnet test --logger "trx;LogFileName=TestResults.trx" --trace on
 
     - name: Upload Test Results
       if: always() # Upload even if tests pass or fail
