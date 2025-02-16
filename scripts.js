@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     // Scroll to section when sidebar link is clicked
-    sidebar.querySelectorAll('a[data-section]').forEach(link => {
+    sidebar.querySelectorAll('a[data-section]').forEach((link, index) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const sectionId = link.getAttribute('data-section');
