@@ -158,7 +158,6 @@ public class PlaywrightTests : PageTest
         await Expect(_page.Locator("body")).ToContainTextAsync("Exercise: What command would you use to create a new .NET console application using the .NET CLI? How do you list all available templates in the .NET CLI? Which command is used to build a .NET project? Describe the command to run a .NET application. How can you add a NuGet package to a .NET project using the CLI?");
         await _page.GetByText("Describe the command to run a").ClickAsync();
         await _page.GetByRole(AriaRole.Link, new() { Name = "Microsoft: Minimal APIs overview" }).ClickAsync();
-        await _page.GetByRole(AriaRole.Link, new() { Name = "Kestrel endpoint configuration" }).ClickAsync();
         await _page.GetByRole(AriaRole.Link, new() { Name = "C# Corner: Restful API In ASP" }).ClickAsync();
         await _page.GetByRole(AriaRole.Button, new() { Name = "Continue with Recommended" }).ClickAsync();
         await _page.GetByText("ASP.NET", new() { Exact = true }).ClickAsync();
