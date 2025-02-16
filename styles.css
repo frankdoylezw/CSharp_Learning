@@ -205,3 +205,13 @@ body {
 #sidebar ul li a:hover {
     text-decoration: underline;
 }
+
+/* Adjust header margin to prevent overlap */
+.fixed-header {
+    margin-top: 20px;
+}
+
+/* Adjust header padding to prevent overlap */
+.fixed-header h1 {
+    padding-top: 20px;
+}

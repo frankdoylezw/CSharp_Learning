@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 section.scrollIntoView({
                     behavior: 'smooth'
                 });
+                closeHamburgerMenu(); // Close the hamburger menu after link selection
             }
         });
     });
@@ -128,5 +129,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             spread: 70,
             origin: { y: 0.6 }
         });
+    }
+
+    function closeHamburgerMenu() {
+        sidebar.classList.remove('visible');
     }
 });
