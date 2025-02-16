@@ -1,33 +1,5 @@
 /* Existing styles... */
 
-/* Fixed Title, Description, and Progress Bar */
-.fixed-header {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%; /* Adjust this value as needed */
-    max-width: 1200px; /* Optional: Set a maximum width */
-    background-color: #ffffff;
-    z-index: 1000;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.fixed-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.fixed-header p {
-    margin: 0;
-    font-size: 1em;
-}
-
-.fixed-header .progress {
-    margin-top: 10px;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -44,10 +16,6 @@
 
     .container {
         padding: 15px;
-    }
-
-    .fixed-header {
-        width: 90%; /* Adjust this value as needed for smaller screens */
     }
 }
 
@@ -182,13 +150,3 @@ body {
 .section-exercise ul {
     margin-top: 10px; /* Added space between "Exercise:" and questions */
 }
-
-
-
-
-
-
-
-
-
-
