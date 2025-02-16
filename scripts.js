@@ -8,20 +8,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const progressBar = document.getElementById('progress-bar');
     const backToTopButton = document.getElementById('backToTop');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const sidebar = document.getElementById('sidebar');
 
-    //// Smooth scrolling for anchor links
-    //document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //    anchor.addEventListener('click', function (e) {
-    //        e.preventDefault();
-    //        const targetId = this.getAttribute('href').substring(1);
-    //        const targetElement = document.getElementById(targetId);
-    //        if (targetElement) {
-    //            targetElement.scrollIntoView({
-    //                behavior: 'smooth'
-    //            });
-    //        }
-    //    });
-    //});
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
     // Scroll animations
     const observer = new IntersectionObserver(entries => {
@@ -50,6 +52,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else {
             backToTopButton.style.display = 'none';
         }
+    });
+
+    // Toggle sidebar visibility
+    hamburgerMenu.addEventListener('click', () => {
+        sidebar.classList.toggle('visible');
+    });
+
+    // Scroll to section when sidebar link is clicked
+    sidebar.querySelectorAll('a[data-section]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('data-section');
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 
     // Load checkbox states from the server

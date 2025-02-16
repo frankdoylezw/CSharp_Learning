@@ -182,3 +182,58 @@ body {
 .section-exercise ul {
     margin-top: 10px; /* Added space between "Exercise:" and questions */
 }
+
+/* Hamburger Menu Button */
+#hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#hamburger-menu:hover {
+    background-color: #0056b3;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: #ffffff;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1050;
+    padding-top: 60px;
+}
+
+#sidebar.visible {
+    left: 0;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px 20px;
+}
+
+#sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: underline;
+}
