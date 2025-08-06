@@ -2,7 +2,15 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const supabaseUrl = 'https://ybmiidwzwcofexmyziad.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlibWlpZHd6d2NvZmV4bXl6aWFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzM3ODYzNSwiZXhwIjoyMDUyOTU0NjM1fQ.F4zSCQLRKcBULRV6yRb2HX_k0-RptBj9UcgIfn0ni8Q';
+    // IMPORTANT: The Supabase key below is a placeholder.
+    // Replace it with your actual Supabase anonymous key.
+    //
+    // WARNING: Do not use a service_role key in client-side code.
+    // It provides unrestricted access to your database and should be kept secret.
+    //
+    // For more information on securing your database, please refer to the Supabase documentation:
+    // https://supabase.com/docs/guides/auth/row-level-security
+    const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
