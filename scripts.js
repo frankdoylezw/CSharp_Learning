@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
+            backToTopButton.classList.add('visible');
         } else {
-            backToTopButton.style.display = 'none';
+            backToTopButton.classList.remove('visible');
         }
     });
 
