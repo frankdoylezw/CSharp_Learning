@@ -98,6 +98,14 @@ body {
     background-color: #f1f1f1;
 }
 
+.progress-container {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+
 /* Progress Bar */
 .progress-bar {
     background-color: #28a745;
@@ -210,12 +218,4 @@ body {
     text-decoration: underline;
 }
 
-/* Adjust header margin to prevent overlap */
-.fixed-header {
-    margin-top: 20px;
-}
-
-/* Adjust header padding to prevent overlap */
-.fixed-header h1 {
-    padding-top: 20px;
-}
+/* No header-specific adjustments needed now */
