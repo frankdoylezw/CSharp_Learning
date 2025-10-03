@@ -112,6 +112,10 @@ body {
     display: none;
 }
 
+#backToTop.visible {
+    display: block;
+}
+
 /* Scroll Animations */
 .phase-section {
     opacity: 0;
