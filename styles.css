@@ -212,7 +212,12 @@ body {
 
 /* Adjust header margin to prevent overlap */
 .fixed-header {
-    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: #f8f9fa; /* Match the body background color */
+    padding-top: 20px; /* Add padding to prevent content from hiding behind the sticky header */
+    margin-top: 0; /* Remove the top margin as it's no longer needed */
 }
 
 /* Adjust header padding to prevent overlap */
